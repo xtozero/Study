@@ -1,6 +1,5 @@
 # 기본 템플릿 용어
-## Class template 혹은 Template class <br>
----------------
+## Class template 혹은 Template class
 - 구조체(struct), 클래스(class), 공용체(union)를 묶어서 클래스형(class types)이라고 한다.
 - 클래스(class) 라는 말은 class나 struct로 시작되는 클래스형을 가리킨다.
 
@@ -12,8 +11,6 @@
     3. **템플릿 식별자인 이름을 가지는 클래스**
 
 ## Instantiation 와 Specialization
-
----------------
 - 인스턴스화(Instantiation) : 템플릿에서 인자를 실제 값으로 치환하여 일반 클래스, 함수, 멤버 함수로 생성하는 과정
 - 특수화(Specialization) : 인스턴스화 과정에서 생성된 실체
 - 명시적 특수화(explicit specialization) : 템플릿 파라미터를 명시적으로 치환
@@ -37,8 +34,6 @@ class BaseClass<T*>      // 부분 특수화 ( partial specialization )
 };
 ```
 ## Declarations 와 Definitions
-
----------------
 - 선언(declaration) : 이름을 C++영역에 도입하는 것
 ```c++
 class C;
@@ -60,8 +55,6 @@ template <typename T>
 class BaseClass {};
 ```
 ## The One-Definition Rule
-
----------------
 - 단정의 법칙(ODR, one-definition rule) : 재선언에 관한 몇 가지 제약사항
 
     > 인라인이 아닌 *함수, 멤버 함수, 전역 변수, 정적 데이터 멤버*는 **한 프로그램 내에서 단 한 번만 정의**
@@ -69,8 +62,6 @@ class BaseClass {};
 - 번역 단위(translate unit) : 원본 파일을 전처리했을 때 나오는 결과물 #include 지시자가 가리킨 모든 내용물을 포함한 것
 
 ## Template Arguments 와 Template Parameters
-
----------------
 - 템플릿 식별자(template id) : 꺾쇠( <> )에 둘러싸인 인자가 따라오는 템플릿 이름의 조합 ex) ArrayInClass<double, 10>
 - 템플릿 파라미터(template parameters) : 템플릿 선언이나 정의에서 키워드 template 다음에 나열된 이름들이다. ex) template <typename T, typename N> 에서 T, N는 template parameters
 - 템플릿 인자(template arguments) : 템플릿 파라미터의 자리에 대신 들어갈 아이템이다. ex) ArrayInClass<double, 10> 에서 double과 10
