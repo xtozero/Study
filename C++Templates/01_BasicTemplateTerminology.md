@@ -9,6 +9,8 @@
     1. 클래스 템플릿과 같은 의미
     2. **템플릿으로 생성된 클래스**
     3. **템플릿 식별자인 이름을 가지는 클래스**
+    
+    > 책에서는 템플릿 클래스에 대해서 설명하고 있지만 템플릿 클래스는 클래스 템플릿을 사람들이 오용하고 있는 용어라고 한다. ([관련 stackoverflow link]( http://stackoverflow.com/questions/879535/what-is-the-difference-between-a-template-class-and-a-class-template))
 
 ## Instantiation 와 Specialization
 - 인스턴스화(Instantiation) : 템플릿에서 인자를 실제 값으로 치환하여 일반 클래스, 함수, 멤버 함수로 생성하는 과정
