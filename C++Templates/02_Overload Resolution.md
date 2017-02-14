@@ -140,3 +140,77 @@ int main( )
 }
 ```
 ## 멤버 함수를 위한 암시적 인자(*this)에 관한 오버로딩 동작
+- 정적이 아닌 멤버 함수의 호출은 멤버 함수 내에 숨겨진 파라미터 *this를 갖는다.
+- 숨겨진 *this 파라미터는 명시적인 파라미터와 같이 오버로딩 해석에 참여하는데 정적 멤버를 비정적 멤버와 비교할 경우 묵시적인 *this 파라미터의 인자 일치 정도는 무시된다.
+```c++
+class BadString
+{
+public:
+	BadString( char const* ) {}
+
+	char& operator[] ( size_t ) {}
+	char const& operator[] ( size_t ) const {}
+
+	operator char* () {}
+	operator char const* () {}
+};
+
+int main()
+{
+	BadString str( "correckt" );
+	str[5] = 'c'; // "[]" 연산자 중 두 개 이상이 이 피연산자와 일치합니다.
+				  // 기본 제공 연산자 "pointer-to-obeject[interger]"
+				  // 함수 "BadString::operator[](size_t)"
+}
+```
+- 위의 코드에서 str[5]에 모호한 것이 없는 것처럼 보이나 묵시적 변환 연산자를 str에 적용하면 포인터형을 얻게 되고 내장 [] 연산자도 가용 후보가 된다.
+- 내장 [] 연산자는 내포된 인자 *this에 관해서는 잘 일치하지 않지만 ptrdiff_t형이 int인 플랫폼에서 5라는 인자와 완전 일치한다.
+> 위의 코드는 x86에서는 모호한 호출이지만 x64에서는 모호하지 않다.( ptrdiff_t형이 long이기 때문 )
+
+## 완벽한 일치 상세
+- int형의 인자와 완벽한 일치를 이루는 일반적인 파라미터형은 int, int&, int const& (const int&)가 있다.
+- **lvalue의 경우에는 const가 없는 쪽**이 **rvalue의 경우에는 const가 있는 쪽**이 선호된다.
+```c++
+void PerfectMatch( int& ) { cout << "#1" << endl; } // #1
+void PerfectMatch( const int & ) { cout << "#2" << endl; } // #2
+
+int main()
+{
+	int k = 0;
+	PerfectMatch( k ); // #1
+	PerfectMatch( 42 ); // #2
+}
+```
+- 멤버 함수 호출의 묵시적 인자에 대해서도 같은 법칙이 적용된다.
+```c++
+class Wonder
+{
+public:
+	void tick() { cout << "#1" << endl; }
+	void tick() const { cout << "#2" << endl; }
+	void tack() const { cout << "#3" << endl; }
+};
+
+int main()
+{
+	Wonder device;
+	device.tick(); // #1
+	device.tack(); // #3 Wonder::tack 함수 중에 const가 아닌 함수가 없으므로
+}
+```
+- 참조자가 있는 것과 없는 것에 대해 오버로딩한 경우 모호함이 발생할 수 있다.
+```c++
+void PerfectMatch( int ) { cout << "#3" << endl; } // #3 추가시 모호함 발생
+``` 
+## 비템플릿 선호
+- 비템플릿 함수와 템플릿 함수의 특수화 결과가 동일하다면 비템플릿 함수가 선호된다.
+```c++
+template<typename T> int f( T ) {}
+void f( int ) {}
+
+int main()
+{
+	return f(7); // error 반환 값이 없는 비템플릿 함수가 선택.
+}
+```
+## 변환순서
