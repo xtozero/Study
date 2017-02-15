@@ -1,6 +1,6 @@
 # 오버로딩 해석
 ## 개요
-- 오버로딩 해석(Overload Resolution) : 호출 표현식에 대해서 호출한 대상을 선택하는 과정.
+- 오버로딩 해석(Overload Resolution) : 호출 표현식에 대해서 호출할 대상을 선택하는 과정.
 ```c++
 void DisplayNum(int) {}
 void DisplayNum(double) {}
@@ -215,3 +215,66 @@ int main()
 }
 ```
 ## 변환순서
+- 묵시적 변환시 기초 변환들이 차례대로 적용될 수 있다.
+```c++
+class Base
+{
+public:
+	operator short() const { return 0; }
+};
+
+class Derived : public Base
+{
+
+};
+
+void count( int ) {}
+
+int main()
+{
+	Derived object;
+	count( object ); // ok Derived -> Base -> short -> int 순으로 변환되어 잘 동작한다.
+}
+```
+- 위 예제는 표준 변환 후 사용자 정의 변환이 뒤따르고 또다시 다른 표준 변환이 일어난다.
+- 변환 과정중에는 사용자 정의 변환이 최대 한 번만 일어날 수 있다.
+- 변환 과정중에 좀더 적은 변환으로 호출가능한 함수가 있다면 해당 함수가 선호된다.
+```c++
+void count(short); // int로의 데이터 승격을 하지 않아도 되므로 더 선호된다.
+```
+## 포인트 변환
+- 포인트 변환은 다음과 같은 특수 표준 데이터형 변환을 거친다.
+1. bool 형으로 변환
+2. void* 형으로 변환
+3. 상속 관계의 클래스 포인터일 경우 상속받은 클래스에서 기본 클래스로의 변환
+4. 멤버에 대한 포인터일 경우 기본 클래스에서 상속받은 클래스로의 변환
+```c++
+void check( void* ) { cout << "#1" << endl; } // #1
+void check( bool ) { cout << "#1" << endl; } // #2
+
+int main()
+{
+	int* p = nullptr;
+	check(p); // bool 형으로의 변환은 다른 표준 데이터형 변환보다 좋지 않은 것으로 취급.
+
+	//
+}
+```
+- 상속 관계의 클래스 포인터일 경우 상속에 의한 관계가 있는 다른 클래스로의 변환이 존재하면 가장 하위의 상속 클래스로의 변환이 선호된다.
+```c++
+class Interface {};
+
+class CommonProcesses : public Interface {};
+
+class Machine : public CommonProcesses {};
+
+void serialize( Interface* ) { cout << "#1" << endl; } // #1
+void serialize( CommonProcesses* ) { cout << "#2" << endl; } // #2
+
+int main()
+{
+	Machine* machine = nullptr;
+	serialize( machine ); // #2
+}
+```
+- 매우 비슷한 법칙이 멤버에 대한 포인터에도 적용된다. 멤버에 관한 포인터는 상속 그래프에서 **기본 클래스에 가장 가까운 클래스(상위 클래스)**가 선호된다.
