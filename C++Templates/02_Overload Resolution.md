@@ -22,6 +22,15 @@ int main()
     3. 후보 함수가 호출에 적합하지 않으면 오버로딩 집합에서 삭제하여 가용 함수 후보( viable function candidate )를 형성
     4. 가용 함수 후보 중 가장 잘 맞는 후보를 선택, 후보가 여러개 있다면 모호한 호출이 된다.
     5. 선택된 후보를 검사한다. ex) private 멤버라면 진단 메시지가 출력.
+```c++
+void Ambiguous(long) {}
+void Ambiguous(double) {}
+
+int main()
+{
+    Ambiguous(1); // error 후보가 여러개 있어 모호한 호출
+}
+```
 
 ## 가용 함수의 정렬 방법
 - 오버로딩 해석은 호출의 각 인자와 가용 함수 후보들의 파라미터 간 대응 정도에 따라 순위를 매긴다.
@@ -278,3 +287,57 @@ int main()
 }
 ```
 - 매우 비슷한 법칙이 멤버에 대한 포인터에도 적용된다. 멤버에 관한 포인터는 상속 그래프에서 **기본 클래스에 가장 가까운 클래스(상위 클래스)**가 선호된다.
+## functor와 대리함수
+- 호출 표현식이 함수 대신 클래스형 객체를 참조한다면 오버로딩 집합에 두 가지가 더 추가될 수 있다.
+1. 멤버 연산자 operator()
+2. 포인터나 참조자를 함수형으로 묵시적 형변환하는 연산자
+```c++
+using FuncType = void(*)( double, int );
+
+class IndirectFunctor
+{
+public:
+	void operator()( double, double ) const {}
+	operator FuncType() const { return nullptr; }
+};
+
+int main( )
+{
+	IndirectFunctor functor;
+	functor( 3, 5 ); // error 모호한 호출 operator()는 묵시적인 *this 파라미터에 대해서는 잘 맞지만 두번째 인자가 FuncType보다 잘 맞지 않으므로 우열을 가릴 수 없다.
+}
+```
+## 그 밖의 오버로딩 문맥
+- 함수 호출 외에도 함수 호출과 유사한 선택을 해야 하는 상황이 존재한다.
+- 함수의 주소가 필요할 경우
+```c++
+void n_elements( int ) { cout << "#1" << endl; }
+void n_elements( float ) { cout << "#2" << endl; }
+
+int main( )
+{
+	void ( *pFunc )(float) = n_elements;
+	pFunc( 1 ); // #2
+}
+```
+- 초기화시 적절한 생성자나 변환 연산자를 선택할 경우
+```c++
+class BigNum
+{
+public:
+	BigNum( int ) { cout << "#1" << endl; }
+	BigNum( long ) { cout << "#2" << endl; }
+	BigNum( double ) { cout << "#3" << endl; }
+	BigNum( const std::string& ) { cout << "#4" << endl; }
+
+	operator double( ) { cout << "#5" << endl; return 1; }
+	operator long( ) { cout << "#6" << endl; return 1.0; }
+};
+
+int main
+{
+	BigNum bn1( 100103 ); // #1
+	BigNum bn2( "7057103224.095764" ); // #4
+	int in = bn1; // #6
+}
+```
