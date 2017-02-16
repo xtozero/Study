@@ -82,3 +82,22 @@ public:
     ArrayInClass<T, 12> contents; // 여기서 T는 템플릿 파라미터이면서 템플릿 인자이다.
 }
 ```
+## 연결
+- 연결(linkage) : 이름이 전체 프로그램 또는 하나의 번역 단위에서 같은 개체를 참조 할 수 있는지 여부
+- 연결 없음(no linkage) : 해당 이름이 속하는 범위(Scope)에서만 참조할 수 있음.
+> 명시적으로 extern으로 선언되지 않은 변수
+> 지역 클래스와 그 멤버 함수
+> 블록 범위에 선언된 이름 ex) typedef, enum
+
+- 내부 연결(internal linkage) : 번역 단위 내 모든 범위에서 참조할 수 있음.
+> static으로 선언된 변수, 함수, 함수 템플릿
+> extern으로 선언되지 않은 non-volitaile non-inline(c++ 17) const(constexpr 포함) 변수
+> 익명 공용체( anonymous unions )의 멤버
+> 익명 네임스페이스( Unnamed namespace )에 선언된 모든 이름
+
+- 외부 연결(external linkage) : 전체 프로그램 내에서 참조할 수 있음.
+> static으로 선언되지 않은 함수, 네임 스페이스에 속하는 static으로 선언되지 않은 non-const 변수, extern으로 선언된 변수
+> 열거형과 열거자
+> 클래스 이름, 멤버 함수, 정적 데이터 멤버, 중첩 클래스 및 열겨형, 클래스 본문 내에 friend 선언으로 처음 선언된 함수
+> static으로 선언되지 않은 함수 템플릿
+> 블록 범위에 처음 선언된 extern 변수, 함수
