@@ -82,7 +82,7 @@ public:
     ArrayInClass<T, 12> contents; // 여기서 T는 템플릿 파라미터이면서 템플릿 인자이다.
 }
 ```
-## 연결
+## Linkage
 - 연결(linkage) : 이름이 전체 프로그램 또는 하나의 번역 단위에서 같은 개체를 참조 할 수 있는지 여부
 - 연결 없음(no linkage) : 해당 이름이 속하는 범위(Scope)에서만 참조할 수 있음.
 > 명시적으로 extern으로 선언되지 않은 변수
