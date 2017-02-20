@@ -1,45 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="02_One Definition Rule">
+    <Filter Include="03_One Definition Rule">
       <UniqueIdentifier>{4b1b4452-f909-416b-851a-2be9c4a4daf6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02_One Definition Rule\OnePerProgram">
+    <Filter Include="03_One Definition Rule\OnePerProgram">
       <UniqueIdentifier>{75a4bf72-afb3-49b5-a560-f6ea935f8c15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02_One Definition Rule\Cross-Translation">
+    <Filter Include="03_One Definition Rule\Cross-Translation">
       <UniqueIdentifier>{6eb9e3f2-267b-48a5-8d32-40dbc69b937a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Function Template">
+      <UniqueIdentifier>{69dfd0e8-a51e-4ffb-8811-4760941a76b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="02_One Definition Rule\OnePerProgram\main.cpp">
-      <Filter>02_One Definition Rule\OnePerProgram</Filter>
+    <ClCompile Include="04_Function Template\main.cpp">
+      <Filter>04_Function Template</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\OnePerProgram\TranslateUnit1.cpp">
-      <Filter>02_One Definition Rule\OnePerProgram</Filter>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\main.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
-      <Filter>02_One Definition Rule\OnePerProgram</Filter>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\tmp_impl.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\Cross-Translation\main.cpp">
-      <Filter>02_One Definition Rule\Cross-Translation</Filter>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\Cross-Translation\TranslateUnit1.cpp">
-      <Filter>02_One Definition Rule\Cross-Translation</Filter>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit2.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\Cross-Translation\TranslateUnit2.cpp">
-      <Filter>02_One Definition Rule\Cross-Translation</Filter>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\main.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram</Filter>
     </ClCompile>
-    <ClCompile Include="02_One Definition Rule\Cross-Translation\tmp_impl.cpp">
-      <Filter>02_One Definition Rule\Cross-Translation</Filter>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit1.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="02_One Definition Rule\OnePerProgram\OnePerPorgram.h">
-      <Filter>02_One Definition Rule\OnePerProgram</Filter>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\CrossTranslation.h">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
     </ClInclude>
-    <ClInclude Include="02_One Definition Rule\Cross-Translation\CrossTranslation.h">
-      <Filter>02_One Definition Rule\Cross-Translation</Filter>
+    <ClInclude Include="03_One Definition Rule\OnePerProgram\OnePerPorgram.h">
+      <Filter>03_One Definition Rule\OnePerProgram</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
