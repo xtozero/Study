@@ -78,8 +78,8 @@ int main()
 
 3위 - **데이터형 승격을 통한 일치** : 작은 정수형( bool, char, short, 열거형 )을 int, unsigned int, long, unsigned long으로 float를 double로 묵시적으로 변환하여 호출.
 ```c++
-void Promotion(char) { cout << "#2" << endl; } // #1
-void Promotion(int) { cout << "#3" << endl; } // #2
+void Promotion(char) { cout << "#1" << endl; } // #1
+void Promotion(int) { cout << "#2" << endl; } // #2
 
 int main()
 {

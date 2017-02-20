@@ -100,6 +100,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 ```
 - 컴파일러는 expr을 통해서 함수 템플릿의 T와 ParamType을 추론한다.
 > ParamType에 const와 같은 수식어가 붙기 때문에 T와 ParamType은 다를 수 있다.
+
 - 템플릿의 추론 방식은 ParamType의 모양에 따라 3가지로 나눌 수 있다.
 
 	- **ParamType이 reference 형식(T&)**일 경우
