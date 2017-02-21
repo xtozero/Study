@@ -136,7 +136,7 @@ template <typename T>
 class Implicit
 {
 public:
-	Implicit( T a ) { };
+	Implicit( T a ) { }
 };
 
 template <typename T>
@@ -148,7 +148,7 @@ int main( )
 	TemplateFunction( 1 );		// error
 }
 ```
-## 멤버 함수를 위한 암시적 인자(*this)에 관한 오버로딩 동작
+## 멤버 함수를 위한 묵시적 인자(*this)에 관한 오버로딩 동작
 - 정적이 아닌 멤버 함수의 호출은 멤버 함수 내에 숨겨진 파라미터 *this를 갖는다.
 - 숨겨진 *this 파라미터는 명시적인 파라미터와 같이 오버로딩 해석에 참여하는데 정적 멤버를 비정적 멤버와 비교할 경우 묵시적인 *this 파라미터의 인자 일치 정도는 무시된다.
 ```c++
