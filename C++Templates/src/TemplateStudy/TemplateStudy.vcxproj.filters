@@ -13,6 +13,9 @@
     <Filter Include="04_Function Template">
       <UniqueIdentifier>{69dfd0e8-a51e-4ffb-8811-4760941a76b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02_Overload Resolution">
+      <UniqueIdentifier>{6417707d-5532-43bf-90cc-e5b9a59a76e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="04_Function Template\main.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
       <Filter>03_One Definition Rule\OnePerProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\main.cpp">
+      <Filter>02_Overload Resolution</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
