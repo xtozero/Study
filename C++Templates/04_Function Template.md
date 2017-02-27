@@ -111,12 +111,17 @@ f(expr) // 어떤 표현식으로 f를 호출
 		
 		```c++
 		template <typename T>
-		void f( T& param ) {}
+		void CallByReference( T& param ) {}
 
 		int x = 27;
 		int& rx = x;
 		const int cx = x;
 		const int& crx = x;
+
+		CallByReference( x );		// T: int ParamType : int&
+		CallByReference( rx );		// T: int ParamType : int&
+		CallByReference( cx );		// T: const int, ParamType : const int&
+		CallByReference( crx );		// T: const int, ParamType : const int&
 		```
 
 	- **ParamType이 forwarding reference 형식(T&&)**일 경우
@@ -126,7 +131,15 @@ f(expr) // 어떤 표현식으로 f를 호출
 		2\. expr이 rvalue이면 1의 규칙이 적용된다.
 	
 		```c++
+		template <typename T>
+		void CallByForwardReference( T&& param ) {}
 
+		// T&& 인 경우
+		CallByForwardReference( x );		// T: int& ParamType : int&
+		CallByForwardReference( rx );		// T: int& ParamType : int&
+		CallByForwardReference( cx );		// T: const int&, ParamType : const int&
+		CallByForwardReference( crx );		// T: const int&, ParamType : const int&
+		CallByForwardReference( 27 );		// T: int, ParamType : int&&
 		```
 
 	- **1, 2에 해당되지 않는 경우**
@@ -136,12 +149,194 @@ f(expr) // 어떤 표현식으로 f를 호출
 		2\. expr에 const volatile mutable 키워드가 존재하면 해당 키워드를 무시한다.
 		
 		```c++
+		template <typename T>
+		void CallByValue( T param ) {}
+
 		class TypeDeduction
 		{
 		public:
 			mutable int m_value;
 		};
 
+		// T 인 경우
+		CallByValue( x );		// T: int ParamType : int
+		CallByValue( rx );		// T: int ParamType : int
+		CallByValue( cx );		// T: int, ParamType : int
+		CallByValue( crx );		// T: int, ParamType : int
+
 		TypeDeduction t = { 0 };
-		auto deducted = t.m_value; // T: int ParamType int
+		auto deducted = t.m_value; // T: int ParamType : int
 		```
+## 템플릿 파라미터
+- 함수 템플릿은 두 종류의 파라미터를 가진다.
+1\. 템플릿 파라미터 : 함수 템플릿 이름 앞 꺾쇠 내에 선언된 것
+> template <typename T>
+
+2\. 호출 파라미터 : 함수 템플릿 이름 뒤 괄호 안에 선언된 것
+> ...add( T lhs, T rhs )
+
+- 템플릿 파라미터는 원하는 대로 얼마든지 사용할 수 있지만 함수 템플릿에서는 기본 템플릿 인자를 명시할 수 없다. ( c++11 지원 이전 컴파일러 까지 )
+- 두 호출 파라미터를 다르게 사용하여 add 함수를 정의하면 아래와 같이 정의할 수 있다.
+```c++
+template <typename T1, typename T2>
+T1 add( T1 lhs, T2 rhs )
+{
+	return lhs + rhs;
+}
+
+add( 1.0f, 1 );
+```
+- 두 호출 파라미터를 사용한 add는 서로 다른 자료형을 사용하여 호출할 수 있지만 반환형이 선언되어야만 한다는 문제가 있다.
+- 이 문제를 개선하기 위해서 아래와 같이 템플릿 파라미터를 추가하여 반환형을 결정할 수 있다.
+```c++
+template <typename T1, typename T2, typename R>
+R add( T1 lhs, T2 rhs )
+{
+	return lhs + rhs;
+}
+
+// 반환형을 지정할 수 있도록한 add 버전 1
+add<int, double, double>( 1, 1.f );
+```
+- 템플릿과 호출 파라미터 사이에 어떤 관계도 없거나 템플릿 파라미터가 결정될 수 없을 경우 템플릿 인자를 함수 호출시에 명시적으로 지정해야 한다.
+- 함수를 호출할 때마다 매번 모든 파라미터를 지정하는 것은 매우 번거로운 일인데 파라미터의 순서를 바꾸는 것으로 이를 개선할 수 있다.
+```c++
+template <typename R, typename T1, typename T2>
+R add( T1 lhs, T2 rhs )
+{
+	return lhs + rhs;
+}
+
+// 반환형을 지정할 수 있도록한 add 버전 2
+add<double>( 1, 1.f );
+```
+- 첫번쨰 파라미터는 명시적으로 지정하고 나머지는 인자를 통해 int와 double로 추론된다.
+- c++14 에서는 다음과 같이 좀 더 간결한 방법이 가능하다.
+```c++
+template <typename T1, typename T2>
+decltype( T1() + T2() ) new_add( T1 lhs, T2 rhs )
+{
+	return lhs + rhs;
+}
+
+template <typename T1, typename T2>
+decltype( auto ) auto_add( T1 lhs, T2 rhs )
+{
+	return lhs + rhs;
+}
+
+new_add( 5.1234, 1 );
+auto_add( 2.f, 2L );
+```
+## 오버로딩 함수 템플릿
+- 일반 함수처럼 함수 템플릿도 오버로딩 할 수 있다.
+```c++
+int max( const int& lhs, const int& rhs )
+{
+	cout << "max( int, int )" << endl;
+	return lhs < rhs ? rhs : lhs;
+}
+
+template <typename T>
+T max( const T& lhs, const T& rhs )
+{
+	cout << "max( T, T )" << endl;
+	return lhs < rhs ? rhs : lhs;
+}
+
+template <typename T>
+T max( const T& first, const T& second, const T& third )
+{
+	cout << "max( T, T, T )" << endl;
+	return max( max( first, second ), third );
+}
+
+// 함수 템플릿의 오버로딩
+max( 7, 42, 68 );			// 세 인자를 위한 템플릿 호출
+max( 7.0, 42.0 );			// max<double> 호출
+max( 'a', 'b' );			// max<char> 호출
+max( 7, 42 );				// nontemplate 함수 max 호출
+max<>( 7, 42 );				// max<int> 호출
+max<double>( 7, 42 );		// max<double> 호출
+max( 'a', 42.7 );			// nontemplate 함수 max 호출
+```
+- 함수 템플릿이 템플릿이 아닌 함수와 동일한 자료형을 가지고 인스턴스화된 경우에는 템플릿이 아닌 함수가 선호된다.
+> max( 7, 42 );				// nontemplate 함수 max 호출
+
+- 함수 템플릿이 호출인자에 좀 더 잘 맞는 함수를 생성한 경우에는 템플릿을 선택한다.
+> max( 7.0, 42.0 );			// max<double> 호출 <br>
+> max( 'a', 'b' );			// max<char> 호출
+
+- 빈 템플릿 인자 목록을 명시하거나 명시적으로 인자를 지정할 수도 있다.
+> max<>( 7, 42 );				// max<int> 호출 템플릿 함수만 고려되고 호출 인자에서 템플릿 파라미터가 추론되어야 한다. <br>
+> max<double>( 7, 42 );		// max<double> 호출
+
+- 템플릿에서는 일반 함수와 달리 자동으로 데이터형을 변환하지 않기 떄문에 아래 함수는 템플릿이 아닌 함수가 호출된다.
+> max( 'a', 42.7 );			// nontemplate 함수 max 호출 <br>
+> max( const T& lhs, const T& rhs )는 자동으로 데이터형을 변환하지 않아 템플릿 파라미터는 하나지만 char 혹은 double인 템플릿 인자를 가질 수 있어 모호하다.
+
+- 포인터와 일반 C 문자열에 대한 최대값 템플릿을 오버로딩하는 예제를 살펴보자
+```c++
+template <typename T>
+T max( const T& lhs, const T& rhs )
+{
+	cout << "max( T, T )" << endl;
+	return lhs < rhs ? rhs : lhs;
+}
+
+template <typename T>
+T* const& max( T* const & a, T* const & b )
+{
+	cout << "T* const & a, T* const & b" << endl;
+	return *a < *b ? b : a;
+}
+
+const char* const& max( const char* const& a, const char* const& b )
+{
+	cout << "max( const char* const& a, const char* const& b )" << endl;
+	return strcmp( a, b ) < 0 ? b : a;
+}
+
+string hey = "hey";
+string you = "you";
+
+max( hey, you );
+
+int a = 1;
+int b = 2;
+int* p1 = &b;
+int* p2 = &a;
+
+max( p1, p2 );
+
+const char* s1 = "Alpha";
+const char* s2 = "Bong";
+max( s1, s2 );
+```
+
+- 일반적으로 함수 템플릿을 오버로딩할 때는 필요 이상으로 수정하지 않는 것이 좋다.
+- 파라미터의 수를 바꾼다든지, 템플릿 파라미터를 명시하는 것 정도만 수정하는 편이 낫다.
+- 예를 들어 **참조자를 넘겨받는 max() 템플릿을 오버로딩하여 두 C 문자열을 값으로 넘겨받게 했다고 하면 세개의 C 문자열에서의 최대값을 계산하는 버전의 max를 사용할 수 없다.**
+```c++
+template <typename T>
+const T& new_max( const T& lhs, const T& rhs )
+{
+	return lhs < rhs ? rhs : lhs;
+}
+
+const char* new_max( const char* lhs, const char* rhs )
+{
+	return strcmp( lhs, rhs ) < 0 ? rhs : lhs;
+}
+
+template <typename T>
+const T& new_max( const T& first, const T& second, const T& third )
+{
+	return new_max( new_max( first, second ), third ); // max( first, second )가 만든 임시 지역 변수가 함수에 의해 참조자로 반환될 수도 있다. )
+}
+
+const char* st1 = "Template";
+const char* st2 = "Study";
+const char* st3 = "Successfull";
+cout << new_max( st1, st2, st2 ) << endl;
+```
