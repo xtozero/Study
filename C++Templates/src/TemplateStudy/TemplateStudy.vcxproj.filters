@@ -19,31 +19,40 @@
     <Filter Include="05_Class Template">
       <UniqueIdentifier>{76f9aaa8-e622-49bb-be36-cbb1905c8f8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03_One Definition Rule\ODR_01">
+      <UniqueIdentifier>{b78ea505-fccf-463a-aa6a-56f693a58646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\OnePerProgram\ODR_11">
+      <UniqueIdentifier>{fee96714-fafd-44c3-8479-851d5d4369a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\OnePerProgram\ODR_10">
+      <UniqueIdentifier>{23b9a20c-e871-4de4-902b-dfc1fe4f9b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\OnePerProgram\ODR_12">
+      <UniqueIdentifier>{7fe515be-a04f-4f97-bc3b-079ca189561a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\OnePerProgram\Summary">
+      <UniqueIdentifier>{ba31c92c-cd89-4ed2-b23a-63f2f477cea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\Cross-Translation\ODR_15">
+      <UniqueIdentifier>{2da43f1d-bc34-4c2e-a3a5-015980b29968}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\Cross-Translation\ODR_16">
+      <UniqueIdentifier>{2e1efeda-343b-44aa-b367-81921420bbac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\Cross-Translation\ODR_17">
+      <UniqueIdentifier>{e8200ca0-4380-4b50-8c9c-2f558f1163fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\Cross-Translation\Summary">
+      <UniqueIdentifier>{8fdbfdca-1fdf-4e23-a2ae-96df48580f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_One Definition Rule\Cross-Translation\ODR_19">
+      <UniqueIdentifier>{34ac0188-3199-4ebb-8910-54c6ad9c17a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="04_Function Template\main.cpp">
       <Filter>04_Function Template</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\Cross-Translation\main.cpp">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\Cross-Translation\tmp_impl.cpp">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit1.cpp">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit2.cpp">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\OnePerProgram\main.cpp">
-      <Filter>03_One Definition Rule\OnePerProgram</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit1.cpp">
-      <Filter>03_One Definition Rule\OnePerProgram</Filter>
-    </ClCompile>
-    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
-      <Filter>03_One Definition Rule\OnePerProgram</Filter>
     </ClCompile>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
       <Filter>02_Overload Resolution</Filter>
@@ -117,13 +126,154 @@
     <ClCompile Include="05_Class Template\main.cpp">
       <Filter>05_Class Template</Filter>
     </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_10_TR2.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_10</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_10.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_10</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_10_TR1.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_10</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_11_TR2.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_11</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_11.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_11</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_11_TR1.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_11</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_12_TR1.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_12</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_12_TR2.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_12</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_12.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_12</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\main.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit1.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
+      <Filter>03_One Definition Rule\OnePerProgram\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_02.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_03.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_04.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_05.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_06.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_07.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_08.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_09.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_13.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_01.cpp">
+      <Filter>03_One Definition Rule\ODR_01</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_14.cpp">
+      <Filter>03_One Definition Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit2.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\main.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\tmp_impl.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\TranslateUnit1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\Summary</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_16_TR1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_16</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_16_TR2.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_16</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_16.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_16</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_17.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_17</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_17_TR1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_17</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_17_TR2.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_17</Filter>
+    </ClCompile>
+    <ClCompile Include="ODR_18.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_19.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_19</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_19_TR1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_19</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_15_TR2.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_15.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_15_TR1.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="03_One Definition Rule\Cross-Translation\CrossTranslation.h">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
+    <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_10</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_11.h">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_11</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_12.h">
+      <Filter>03_One Definition Rule\OnePerProgram\ODR_12</Filter>
     </ClInclude>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\OnePerPorgram.h">
-      <Filter>03_One Definition Rule\OnePerProgram</Filter>
+      <Filter>03_One Definition Rule\OnePerProgram\Summary</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\ODR_01.h">
+      <Filter>03_One Definition Rule\ODR_01</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\CrossTranslation.h">
+      <Filter>03_One Definition Rule\Cross-Translation\Summary</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\ODR_16.h">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_16</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\ODR_17.h">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_17</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\ODR_19.h">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_19</Filter>
+    </ClInclude>
+    <ClInclude Include="03_One Definition Rule\Cross-Translation\ODR_15.h">
+      <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

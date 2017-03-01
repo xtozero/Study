@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ONE_PER_PROGRAM_H_
+#define _ONE_PER_PROGRAM_H_
 
 // 3. static 데이터 멤버는 프로그램당 한번만 정의돼야 한다.
 class GlobalCounter
@@ -24,3 +25,5 @@ private:
 //
 //export template <typename T>
 //int ClassTemplate<T>::m_counter = 0;
+
+#endif

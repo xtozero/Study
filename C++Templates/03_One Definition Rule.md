@@ -6,7 +6,7 @@
 - 번역 단위( Translation Units ) : 전처리기가 할 일을 마친 후 컴파일러에게 전달한 코드 덩어리
 - 전처리기는 컴파일 지시자 (#if, #ifdef etc...)에 의해 선택되지 않은 코드를 삭제, #include로 추가된 파일들을 삽입하고 매크로를 확장한다.
 ```c++
-// header.hpp
+// ODR_01.h
 #ifdef DO_DEBUG
     #define debug(x) cout << x << endl
 #else
@@ -15,8 +15,8 @@
 
 void debug_init() {}
 
-// myprog.cpp
-#include "header.hpp"
+// ODR_01.cpp
+#include "ODR_01.h"
 
 int main()
 {
@@ -41,6 +41,7 @@ int main()
     
     1\. **네임스페이스와 네임스페이스 별칭** : 네임스페이스와 네임스페이스의 별칭에 대한 선언은 항상 정의다. 다만 네임스페이스의 멤버 목록은 이후에 확장될 수 있다.
     ```c++
+    // ODR_02.cpp
     namespace A
     {
         namespace B
@@ -52,6 +53,7 @@ int main()
     int main()
     {
         namespace AB = A::B; // 네임스페이스 별칭
+        // namespace AB = A;
 
         AB::Foo();
         A::B::Foo();
@@ -61,6 +63,7 @@ int main()
     2\. **클래스, 클래스 템플릿, 함수, 함수 템플릿, 멤버 함수, 멤버 함수 템플릿** : 선언이 중괄호{}로 묶인 내용을 가진 이름으로 이뤄졌으면 정의다.  
     > 공용체, 연산자, 멤버 연산자, 정적 멤버 함수, 생성자와 소멸자 그리고 이들의 템플릿 버전에 대한 명시적 특수화에도 적용된다.
     ```c++
+    // ODR_03.cpp
     class Declaration; // 선언
     class Declaration; // ok
     struct Definition {}; // 정의
@@ -69,6 +72,7 @@ int main()
 
     3\. **열거형** : 중괄호{}로 묶인 열거자(enumerators) 목록이 뒤따라오면 정의다.
     ```c++
+    // ODR_04.cpp
     enum Declaration : int;
 	enum Declaration : int; // ok 
 	enum Declaration; //  error C3432: 'Declaration': 범위가 지정되지 않은 열거형의 정방향 선언에는 내부 형식이 있어야 합니다.
@@ -78,12 +82,14 @@ int main()
 
     4\. **지역 변수와 정적이지 않은(nonstatic) 데이터 멤버** : 항상 정의로 취급된다.
     ```c++
+    // ODR_05.cpp
     int Definitions;
 	int Definitions; // error
     ```
 
     5\. **전역 변수** : extern이 붙지 않거나 extern이 붙은 전역 변수가 초기화를 가지고 있다면 정의다.
     ```c++
+    // ODR_06.cpp
     extern int global;
     extern int global; // ok
     extern int global = 2;
@@ -92,6 +98,7 @@ int main()
 
     6\. **정적 데이터 멤버** : 자신이 속해 있는 클래스나 클래스 템플릿의 **외부에서 선언되면 정의**다.
     ```c++
+    // ODR_07.cpp
     class StaticMember
     {
     public:
@@ -104,6 +111,7 @@ int main()
 
     7\. **typedef, using 선언(using decalarations)과 using 지시자(using directives)** : 정의가 아니다.
     ```c++
+    // ODR_08.cpp
     class Base
     {
     public:
@@ -123,6 +131,7 @@ int main()
 
     8\. **명시적 인스턴스화 지시자** : 이 책에서는 정의로 취급한다.
     ```c++
+    // ODR_09.cpp
     template <typename T>
     void templateFunc( T value ) { cout << value << endl; }
 
@@ -137,13 +146,13 @@ int main()
 
     1\. 인라인이 아닌 함수와 인라인이 아닌 멤버 함수
     ```c++
-    // cpp - translation unit 1
+    // TranslateUnit1.cpp
     int Add( int lhs, int rhs )
     {
         return lhs + rhs;
     }
 
-    // cpp - translation unit 2
+    // TranslateUnit2.cpp
     int Add( int lhs, int rhs ) // error
     {
         return lhs + rhs;
@@ -152,26 +161,26 @@ int main()
     
     2\. 외부 링크를 가지는 변수
     ```c++
-    // cpp - translation unit 1
+    // TranslateUnit1.cpp
     int counter;
 
-    // cpp - translation unit 2
+    // TranslateUnit2.cpp
     int counter;
     ```
 
     3\. 정적 데이터 멤버
     ```c++
-    // header
+    // OnePerProgram.h
     class GlobalCounter
     {
     private:
         static int m_counter;
     };
 
-    // cpp - translation unit 1
+    // TranslateUnit1.cpp
     int GlobalCounter::m_counter = 0;
 
-    // cpp - translation unit 2
+    // TranslateUnit2.cpp
     int GlobalCounter::m_counter = 0; // error
     ```
     
@@ -202,23 +211,50 @@ int main()
 
 ### 번역 단위당 한 번만 정의
 - 어떤 엔티티도 번역 단위 내에서 두 번 이상 정의될 수 없다.
+```c++
+// ODR_13.cpp
+inline void f( ) {}
+inline void f( ) {} // error
+```
 - A라는 클래스형이 있다면 번역 단위에서 아래와 같이 사용되기 전에 먼저 정의돼야 한다.
 
     1\. A의 객체를 생성.
     > 해당 객체를 포함하는 객체가 생성되는 것과 같은 간접적인 생성도 포함된다.
+    ```c++
+    // ODR_14.cpp
+    A a;
+    ```
 
-    2\. A의 데이터 멤버를 선언.
-
-    3\. A에 대한 sizeof나 typeid의 적용
+    2\. A에 대한 sizeof나 typeid의 적용
+    ```c++
+    // ODR_14.cpp
+    sizeof( A );
+    ```
     
-    4\. A의 멤버에 대한 묵시적, 명시적 접근
-    
-    5\. 표현식을 어떤 변환을 사용해 A로 변환하거나 A에서 바뀌는 경우 또는 포인터나 참조자가 A를 가리키게 하거나 포인터나 참조자를 묵시적인 static_cast나 dynamic_cast를 통해 다른 것으로 바꿀 경우
+    3\. 표현식을 어떤 변환을 사용해 A로 변환하거나 A에서 바뀌는 경우 또는 포인터나 참조자가 A를 가리키게 하거나 포인터나 참조자를 묵시적인 static_cast나 dynamic_cast를 통해 다른 것으로 바꿀 경우
     > (void*)로의 변환은 제외
+    ```c++
+    // ODR_14.cpp
+    static_cast<A>( 1 + 2 );
 
-    6\. A의 객체에 값을 할당
+	A* pa = nullptr;
+	B* pb = dynamic_cast<A*>(pa);
+    ```
+
+    4\. A의 객체에 값을 할당
+    ```c++
+    // ODR_14.cpp
+    A a = 1;
+    ```
     
-    7\. A의 인자를 갖거나 A를 반환하는 함수를 정의하거나 호출하는 경우. 다만 함수를 선언만 하는 것은 문제없다.
+    5\. A의 인자를 갖거나 A를 반환하는 함수를 정의하거나 호출하는 경우. 다만 함수를 선언만 하는 것은 문제없다.
+    ```c++
+    // ODR_14.cpp
+    A foo( ); // ok
+
+    foo( ); // error;
+    ```
+
 - 인라인 함수는 해당 함수가 사용되는 모든 번역 단위에 정의돼야 한다. 다만 정의가 함수 호출 이후에 나올 수 있다.
 ```c++
 inline void inlineFunc();
@@ -237,17 +273,17 @@ void inlineFunc()
 - 한 번역 단위보다 더 많은 곳에 특정 실체를 정의할 수 있다면 서로 일치하지 않은 다중 정의가 생길 수 있다.
 - 따라서 한 번역 단위보다 더 많은 곳에서 특정 실체를 정의할 수 있는 경우 모든 정의는 같은 의미를 가져야만 한다.
 - 하지만 **C++ 표준은 다중 정의에서 차이점이 검출되거나 진단돼야 한다고 강제하지 않는다.**
-- C++ 표준은 이러한 교차 번역 단위 동등 제약을 어겼다면 **정의되지 않은 동작이 발생하는 것을 허용**하였습니다.
+- C++ 표준은 이러한 교차 번역 단위 동등 제약을 어겼다면 **정의되지 않은 동작이 발생하는 것을 허용**하였다.
 - 교차 번역 단위 제약조건에 따르면 실체가 두 군데에서 정의되었을 때 정확히 같은 토큰(키워드, 연산자, 식별자 등등 전처리 후에도 남는 것들)의 순열을 가져야 한다
 ```c++
-// header
+// ODR_15.h
 void count1( );
 void count2( );
 
 void count_error1( );
 void count_error2( );
 
-// cpp - translation unit 1
+// ODR_15_TR1.cpp
 static int counter = 0;
 
 inline void increase_counter( )
@@ -272,7 +308,7 @@ void count_error1( )
 	increase_counter( );
 }
 
-// cpp - translation unit 2
+// ODR_15_TR2.cpp
 static int counter = 0;
 
 // 번역 단위 1의 increase_counter와 정확히 같은 토큰을 가지고 있지만
@@ -311,7 +347,7 @@ int main( )
 ```
 - 교차 번역 단위 제약 조건은 선언 내 기본 인자에도 적용된다.
 ```c++
-// cpp - translation unit 1
+// ODR_16_TR1.cpp
 namespace
 {
 	void unused( int a = 4 );
@@ -326,7 +362,7 @@ void defaultArg1( )
 	unused( );
 }
 
-// cpp - translation unit 2
+// ODR_16_TR2.cpp
 namespace
 {
 	void unused( int a = 3 );
@@ -341,13 +377,13 @@ void defaultArg2( )
 	unused( );
 }
 
-// main
+// ODR_16.cpp
 defaultArg1( ); // 4가 출력
 defaultArg2( ); // 3이 출력
 ```
 - 묵시적으로 생성된 클래스의 기본 생성자가 두 번역 단위에서 다를 때 문제가 발생한다.
 ```c++
-// cpp - translation unit 1
+// // ODR_17_TR1.cpp
 class X
 {
 public:
@@ -367,7 +403,7 @@ class D : public X
 
 D d1;
 
-// cpp - translation unit 2
+// // ODR_17_TR2.cpp
 class X
 {
 public:
@@ -393,6 +429,7 @@ X(int, int)
 ```
 - 동일한 토큰이 같은 실체를 가리켜야 한다는 법칙에도 예외가 있다. 같은 토큰이 같은 값을 가지고 결과 표현식의 주소를 사용하지 않는 상수를 가리킨다면 두 토큰은 같은 것으로 간주한다.
 ```c++
+// ODR_18.cpp
 #ifndef _CROSSTRANSLATION_H
 #define _CROSSTRANSLATION_H
 
@@ -410,25 +447,20 @@ class MiniBuffer
 ```
 - 템플릿의 경우 인스턴스화 시점에 바인드되는 이름들은 그 지점에 동일성 법칙이 적용돼야만 하고, 바인딩은 같아야만 한다.
 ```c++
-// header
+// ODR_19.h
 enum Color { red, green, blue };
 
 void init( );
 
-template<typename T> void highlight( T x );
-
-#include "tmp_impl.cpp"
-
-// tmp_impl.cpp
 template<typename T> void highlight( T x )
 {
 	paint( x );
 }
 
-// cpp - translation unit 1
+// ODR_19_TR1.cpp
 namespace
 {
-    // 이름 없는 네임스페이스에 정의된 함수는 외부 링크를 갖지만
+    // 이름 없는 네임스페이스에 정의된 함수는 외부 링크를 갖지만 (c++11 전까지 http://en.cppreference.com/w/cpp/language/namespace 참고)
     // 다른 번역 단위의 이름 없는 네임스페이스에서 정의된 함수들과 다르다.
     // 즉 paint는 main의 paint 함수와 다른 함수이다.
 	void paint( Color c )
@@ -442,7 +474,7 @@ void init( )
 	highlight( blue );
 }
 
-// main
+// ODR_19.cpp
 namespace
 {
 	void paint( Color c )

@@ -296,7 +296,7 @@ void count(short); // int로의 데이터 승격을 하지 않아도 되므로 �
 3. void* 형으로 변환
 4. bool 형으로 변환
 ```c++
-// OR_16
+// OR_16.cpp
 void check( void* ) { cout << "#1" << endl; } // #1
 void check( bool ) { cout << "#2" << endl; } // #2
 
