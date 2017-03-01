@@ -2,13 +2,14 @@
 ## 개요
 - 오버로딩 해석(Overload Resolution) : 호출 표현식에 대해서 호출할 대상을 선택하는 과정.
 ```c++
-void DisplayNum(int) {}
-void DisplayNum(double) {}
+// OR_01.cpp
+void DisplayNum( int ) { cout << "void DisplayNum( int )" << endl; }
+void DisplayNum( double ) { cout << "void DisplayNum( double )" << endl; }
 
-int main()
+int main( )
 {
-    DisplayNum(1);
-    DisplayNum(1.0);
+	DisplayNum( 1 );
+	DisplayNum( 1.0 );
 }
 ```
 ## 오버로딩 시점
@@ -23,6 +24,7 @@ int main()
     4. 가용 함수 후보 중 가장 잘 맞는 후보를 선택, 후보가 여러개 있다면 모호한 호출이 된다.
     5. 선택된 후보를 검사한다. ex) private 멤버라면 진단 메시지가 출력.
 ```c++
+// OR_02.cpp
 void Ambiguous(long) {}
 void Ambiguous(double) {}
 
@@ -36,6 +38,7 @@ int main()
 - 오버로딩 해석은 호출의 각 인자와 가용 함수 후보들의 파라미터 간 대응 정도에 따라 순위를 매긴다.
 - 한 후보가 다른 후보보다 더 낫다고 판단되려면 모든 파라미터가 다른 후보들의 파라미터보다 덜 일치해서는 안 된다.
 ```c++
+// OR_03.cpp
 void Combine( int, double ) {}
 void Combine( double, int ) {}
 
@@ -49,10 +52,11 @@ int main()
 
 1위 - **완벽한 일치** : 파라미터가 주어진 인자의 데이터형을 갖거나 참조자의 데이터형을 갖는 경우. ( const, volatile 한정자가 추가되었을 수 있다. )
 ```c++
-void PerfectMatch( const int ) {} // #1
-void PerfectMatch( double ) {} // #2
+// OR_04.cpp
+void PerfectMatch( const int ) { cout << "PerfectMatch( const int )" << endl; } // #1
+void PerfectMatch( double ) { cout << "PerfectMatch( double )" << endl; } // #2
 
-int main()
+int main( )
 {
 	PerfectMatch( 1 ); // #1 이 호출
 }
@@ -60,6 +64,7 @@ int main()
 
 2위 - **작은 수정을 통한 일치** : 배열을 첫 번째 요소에 대한 포인터로 변환시키거나 int\*\*의 인자를 int const\* const\*의 파라미터로 일치시키기 위해 const를 포함하여 호출.
 ```c++
+// OR_05.cpp
 void MinorAdjust( int* pArray ) { cout << "#1" << endl; } // #1
 // void MinorAdjust( int** ptr ) { cout << "#2" << endl; } // #2
 void MinorAdjust( int const* const* ptr ) { cout << "#3" << endl; } // #3
@@ -78,6 +83,7 @@ int main()
 
 3위 - **데이터형 승격을 통한 일치** : 작은 정수형( bool, char, short, 열거형 )을 int, unsigned int, long, unsigned long으로 float를 double로 묵시적으로 변환하여 호출.
 ```c++
+// OR_06.cpp
 void Promotion(char) { cout << "#1" << endl; } // #1
 void Promotion(int) { cout << "#2" << endl; } // #2
 
@@ -97,6 +103,7 @@ int main()
 \> 자세한 내용은 [Implicit conversions](http://en.cppreference.com/w/cpp/language/implicit_conversion) 참조
 
 ```c++
+// OR_07.cpp
 void StandardConversion( char ) { cout << "#1" << endl; }
 void StandardConversion( ... ) { cout << "#2" << endl; }
 
@@ -108,6 +115,7 @@ int main( )
 
 5위 - **사용자 정의 변환을 통한 일치** : 모든 종류의 묵시적 변환을 허용.
 ```c++
+// OR_08.cpp
 class Userdefined
 {
 public:
@@ -124,6 +132,7 @@ int main()
 
 6위 - **생략을 통한 일치** : 생략된 파라미터는 거의 모든 데이터형에 일치한다. 다만 POD가 아닌 클래스형은 정의되지 않은 행동을 보인다.
 ```c++
+// OR_09.cpp
 void Ellipsis(...) { cout << "#1" << endl; }
 
 int main()
@@ -135,6 +144,7 @@ int main()
 ![](./img/02_01.png)
 - 오버로딩 해석은 템플릿 인자 추론 이후에 일어나며 추론 자체는 어떤 종류의 변환으로도 간주하지 않는다.
 ```c++
+//OR_10.cpp
 template <typename T>
 class Implicit
 {
@@ -156,22 +166,38 @@ int main( )
 - 정적이 아닌 멤버 함수의 호출은 멤버 함수 내에 숨겨진 파라미터 *this를 갖는다.
 - 숨겨진 *this 파라미터는 명시적인 파라미터와 같이 오버로딩 해석에 참여하는데 정적 멤버를 비정적 멤버와 비교할 경우 묵시적인 *this 파라미터의 인자 일치 정도는 무시된다.
 ```c++
+// OR_11.cpp
 class BadString
 {
 public:
-	BadString( char const* ) {}
+	BadString( char const* str ) 
+	{
+		int len = std::strlen( str );
+		m_pString = new char[len + 1];
+		memcpy_s( m_pString, len, str, len );
+		m_pString[len] = '\0';
+	}
+	~BadString( )
+	{
+		delete m_pString;
+	}
 
-	char& operator[] ( size_t ) {}
-	char const& operator[] ( size_t ) const {}
+	char& operator[] ( size_t idx ) { return m_pString[idx]; }
+	char const& operator[] ( size_t idx ) const { return m_pString[idx]; }
 
-	operator char* () {}
-	operator char const* () {}
+	operator char* () { return m_pString; }
+
+private:
+	char* m_pString = nullptr;
 };
 
-int main()
+int main( )
 {
-	BadString str( "correckt" );
-	str[5] = 'c'; // "[]" 연산자 중 두 개 이상이 이 피연산자와 일치합니다.
+	const BadString str1( "template" );
+	str1[5];
+
+	BadString str2( "study" );
+	str2[5];	  // "[]" 연산자 중 두 개 이상이 이 피연산자와 일치합니다.
 				  // 기본 제공 연산자 "pointer-to-obeject[interger]"
 				  // 함수 "BadString::operator[](size_t)"
 }
@@ -185,6 +211,7 @@ int main()
 - int형의 인자와 완벽한 일치를 이루는 일반적인 파라미터형은 int, int&, int const& (const int&)가 있다.
 - **lvalue의 경우에는 const가 없는 쪽**이 **rvalue의 경우에는 const가 있는 쪽**이 선호된다.
 ```c++
+// OR_12.cpp
 void PerfectMatch( int& ) { cout << "#1" << endl; } // #1
 void PerfectMatch( const int & ) { cout << "#2" << endl; } // #2
 
@@ -193,10 +220,14 @@ int main()
 	int k = 0;
 	PerfectMatch( k ); // #1
 	PerfectMatch( 42 ); // #2
+
+	const int ck = 2017;
+	PerfectMatch( ck ); // #2
 }
 ```
 - 멤버 함수 호출의 묵시적 인자에 대해서도 같은 법칙이 적용된다.
 ```c++
+// OR_13.cpp
 class Wonder
 {
 public:
@@ -214,13 +245,15 @@ int main()
 ```
 - 참조자가 있는 것과 없는 것에 대해 오버로딩한 경우 모호함이 발생할 수 있다.
 ```c++
+// OR_12.cpp
 void PerfectMatch( int ) { cout << "#3" << endl; } // #3 추가시 모호함 발생
 ``` 
 ## 비템플릿 선호
 - 비템플릿 함수와 템플릿 함수의 특수화 결과가 동일하다면 비템플릿 함수가 선호된다.
 ```c++
-template<typename T> int f( T ) {}
-void f( int ) {}
+// OR_14.cpp
+template<typename T> int f( T ) { cout << "#1" << endl; }
+void f( int ) { cout << "#2" << endl; }
 
 int main()
 {
@@ -230,6 +263,7 @@ int main()
 ## 변환순서
 - 묵시적 변환시 기초 변환들이 차례대로 적용될 수 있다.
 ```c++
+// OR_15.cpp
 class Base
 {
 public:
@@ -257,11 +291,12 @@ void count(short); // int로의 데이터 승격을 하지 않아도 되므로 �
 ```
 ## 포인트 변환
 - 포인트 변환은 다음과 같은 특수 표준 데이터형 변환을 거친다.
-1. bool 형으로 변환
-2. void* 형으로 변환
-3. 상속 관계의 클래스 포인터일 경우 상속받은 클래스에서 기본 클래스로의 변환
-4. 멤버에 대한 포인터일 경우 기본 클래스에서 상속받은 클래스로의 변환
+1. 상속 관계의 클래스 포인터일 경우 상속받은 클래스에서 기본 클래스로의 변환
+2. 멤버에 대한 포인터일 경우 기본 클래스에서 상속받은 클래스로의 변환
+3. void* 형으로 변환
+4. bool 형으로 변환
 ```c++
+// OR_16
 void check( void* ) { cout << "#1" << endl; } // #1
 void check( bool ) { cout << "#2" << endl; } // #2
 
@@ -274,6 +309,7 @@ int main()
 ```
 - 상속 관계의 클래스 포인터일 경우 상속에 의한 관계가 있는 다른 클래스로의 변환이 존재하면 가장 하위의 상속 클래스로의 변환이 선호된다.
 ```c++
+// OR_18.cpp
 class Interface {};
 
 class CommonProcesses : public Interface {};
@@ -290,13 +326,15 @@ int main()
 	serialize( machine ); // #2 상속 관계의 포인터로의 변환이 void*로의 변환 보다 선호된다.
 }
 ```
-- 매우 비슷한 법칙이 멤버에 대한 포인터에도 적용된다. 멤버에 관한 포인터는 상속 그래프에서 **기본 클래스에 가장 가까운 클래스(상위 클래스)**가 선호된다.
+- ~~매우 비슷한 법칙이 멤버에 대한 포인터에도 적용된다. 멤버에 관한 포인터는 상속 그래프에서 **기본 클래스에 가장 가까운 클래스(상위 클래스)**가 선호된다.~~
+> OR_19.cpp 를 보면 멤버 함수, 멤버 변수 포인터에 대해서 정상적으로 컴파일되지 않는다.
 
 ## functor와 대리함수
 - 호출 표현식이 함수 대신 클래스형 객체를 참조한다면 오버로딩 집합에 두 가지가 더 추가될 수 있다.
 1. 멤버 연산자 operator()
 2. 포인터나 참조자를 함수형으로 묵시적 형변환하는 연산자
 ```c++
+// OR_20.cpp
 using FuncType = void(*)( double, int );
 
 class IndirectFunctor
@@ -316,6 +354,7 @@ int main( )
 - 함수 호출 외에도 함수 호출과 유사한 선택을 해야 하는 상황이 존재한다.
 - 함수의 주소가 필요할 경우
 ```c++
+// OR_21.cpp
 void n_elements( int ) { cout << "#1" << endl; }
 void n_elements( float ) { cout << "#2" << endl; }
 
@@ -327,6 +366,7 @@ int main( )
 ```
 - 초기화시 적절한 생성자나 변환 연산자를 선택할 경우
 ```c++
+// OR_22.cpp
 class BigNum
 {
 public:
@@ -339,7 +379,7 @@ public:
 	operator long( ) { cout << "#6" << endl; return 1.0; }
 };
 
-int main
+int main( )
 {
 	BigNum bn1( 100103 ); // #1
 	BigNum bn2( "7057103224.095764" ); // #4

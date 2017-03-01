@@ -116,6 +116,26 @@ const T& new_max( const T& first, const T& second, const T& third )
 	return new_max( new_max( first, second ), third );
 }
 
+template <typename T>
+const T& min( const T& lhs, const T& rhs )
+{
+	cout << "min( T, T )" << endl;
+	return lhs < rhs ? lhs : rhs;
+}
+
+template <typename T>
+const T& min( const T& first, const T& second, const T& third )
+{
+	cout << "min( T, T, T )" << endl;
+	return min( min( first, second ), third );
+}
+
+const int& min( const int& lhs, const int& rhs )
+{
+	cout << "min( const int& lhs, const int& rhs )" << endl;
+	return lhs < rhs ? lhs : rhs;
+}
+
 int main()
 {
 	cout << add( 1, 2 ) << endl; // 3이 출력
@@ -211,4 +231,7 @@ int main()
 	const char* st2 = "Study";
 	const char* st3 = "Successfull";
 	cout << new_max( st1, st2, st2 ) << endl;
+
+	// 함수 템플릿 오버로딩이 예상치 못하게 동작하는 경우2
+	min( 1, 2, 3 );
 }

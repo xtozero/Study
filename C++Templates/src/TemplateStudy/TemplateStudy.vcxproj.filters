@@ -16,6 +16,9 @@
     <Filter Include="02_Overload Resolution">
       <UniqueIdentifier>{6417707d-5532-43bf-90cc-e5b9a59a76e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="05_Class Template">
+      <UniqueIdentifier>{76f9aaa8-e622-49bb-be36-cbb1905c8f8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="04_Function Template\main.cpp">
@@ -42,8 +45,77 @@
     <ClCompile Include="03_One Definition Rule\OnePerProgram\TranslateUnit2.cpp">
       <Filter>03_One Definition Rule\OnePerProgram</Filter>
     </ClCompile>
-    <ClCompile Include="02_Overload Resolution\main.cpp">
+    <ClCompile Include="02_Overload Resolution\Summary.cpp">
       <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_10.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_11.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_12.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_13.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_14.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_15.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_16.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_17.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_18.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_19.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_20.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_21.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_22.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_01.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_02.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_03.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_04.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_05.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_06.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_07.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_08.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Overload Resolution\OR_09.cpp">
+      <Filter>02_Overload Resolution</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\main.cpp">
+      <Filter>05_Class Template</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
