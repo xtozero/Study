@@ -78,7 +78,7 @@ add( 4, 7 ); // ok T는 두 인자에 대해 int
 add( 4, 4.2 ); // error 첫 번째 T는 int 두 번째 T는 double
 
 // 정상적으로 호출하기 위해서는 아래와 같이 호출하여야 한다.
-cout <<  add( static_cast<double>(4), 4.2 ) << endl; // 두 인자가 일치하도록 명시적으로 형변환
+cout <<  add( static_cast<double>(4), 4.2 ) << endl; // 두 인자가 일치하도록 명시적으로 형 변환
 cout <<  add<double>( 4, 4.2 ) << endl; // T의 데이터형을 명시
 
 template <typename T, typename U>
@@ -187,7 +187,7 @@ T1 add( T1 lhs, T2 rhs )
 
 add( 1.0f, 1 );
 ```
-- 두 호출 파라미터를 사용한 add는 서로 다른 자료형을 사용하여 호출할 수 있지만 반환형이 선언되어야만 한다는 문제가 있다.
+- 두 호출 파라미터를 사용한 add는 서로 다른 자료형을 사용하여 호출할 수 있지만, 반환형이 선언되어야만 한다는 문제가 있다.
 - 이 문제를 개선하기 위해서 아래와 같이 템플릿 파라미터를 추가하여 반환형을 결정할 수 있다.
 ```c++
 template <typename T1, typename T2, typename R>
@@ -355,7 +355,8 @@ template <typename T>
 const T& min( const T& first, const T& second, const T& third )
 {
 	cout << "min( T, T, T )" << endl;
-	return min( min( first, second ), third );
+	return min( min( first, second ), third ); // int를 위해서라도 템플릿 버전이 사용될 수 있다.
+											   // 비 템플릿 함수 선언이 너무 늦게 나왔기 떄문
 }
 
 const int& min( const int& lhs, const int& rhs )

@@ -123,9 +123,6 @@
     <ClCompile Include="02_Overload Resolution\OR_09.cpp">
       <Filter>02_Overload Resolution</Filter>
     </ClCompile>
-    <ClCompile Include="05_Class Template\main.cpp">
-      <Filter>05_Class Template</Filter>
-    </ClCompile>
     <ClCompile Include="03_One Definition Rule\OnePerProgram\ODR_10_TR2.cpp">
       <Filter>03_One Definition Rule\OnePerProgram\ODR_10</Filter>
     </ClCompile>
@@ -225,9 +222,6 @@
     <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_17_TR2.cpp">
       <Filter>03_One Definition Rule\Cross-Translation\ODR_17</Filter>
     </ClCompile>
-    <ClCompile Include="ODR_18.cpp">
-      <Filter>03_One Definition Rule\Cross-Translation</Filter>
-    </ClCompile>
     <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_19.cpp">
       <Filter>03_One Definition Rule\Cross-Translation\ODR_19</Filter>
     </ClCompile>
@@ -242,6 +236,24 @@
     </ClCompile>
     <ClCompile Include="03_One Definition Rule\Cross-Translation\ODR_15_TR1.cpp">
       <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\CT_01.cpp">
+      <Filter>05_Class Template</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\CT_03.cpp">
+      <Filter>05_Class Template</Filter>
+    </ClCompile>
+    <ClCompile Include="03_One Definition Rule\ODR_18.cpp">
+      <Filter>03_One Definition Rule\Cross-Translation</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\CT_02.cpp">
+      <Filter>05_Class Template</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\CT_04.cpp">
+      <Filter>05_Class Template</Filter>
+    </ClCompile>
+    <ClCompile Include="05_Class Template\CT_05.cpp">
+      <Filter>05_Class Template</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
