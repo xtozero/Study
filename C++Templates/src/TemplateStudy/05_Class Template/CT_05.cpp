@@ -54,20 +54,20 @@ T Stack<T, CONT>::top( ) const
 template <typename T, typename CONT>
 Stack<T, CONT>::Stack( const Stack<T, CONT>& stack )
 {
-	m_elems = stack.m_elems;
+	*this = stack;
 }
 
 template <typename T, typename CONT>
 Stack<T, CONT>::Stack( Stack<T, CONT>&& stack )
 {
-	m_elems = std::move( stack.m_elems );
+	*this = std::move( stack );
 }
 
 template <typename T, typename CONT>
 Stack<T, CONT>& Stack<T, CONT>::operator=( const Stack<T, CONT>& stack )
 {
 	m_elems = stack.m_elems;
-	*this;
+	return *this;
 }
 
 template <typename T, typename CONT>
@@ -88,6 +88,9 @@ int main( )
 		intStack.push( 7 );
 		std::cout << intStack.top( ) << std::endl;
 		intStack.pop( );
+
+		intStack.push( 8 );
+		Stack<int> moveStack = std::move( intStack );
 
 		dequeStack.push( 42.42 );
 		std::cout << dequeStack.top( ) << std::endl;

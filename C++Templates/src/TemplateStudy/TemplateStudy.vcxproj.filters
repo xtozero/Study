@@ -49,6 +49,9 @@
     <Filter Include="03_One Definition Rule\Cross-Translation\ODR_19">
       <UniqueIdentifier>{34ac0188-3199-4ebb-8910-54c6ad9c17a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06_Nontype Template Parameters">
+      <UniqueIdentifier>{0a4df6db-a394-4e70-9115-143a7cd08cc2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="04_Function Template\main.cpp">
@@ -254,6 +257,15 @@
     </ClCompile>
     <ClCompile Include="05_Class Template\CT_05.cpp">
       <Filter>05_Class Template</Filter>
+    </ClCompile>
+    <ClCompile Include="06_Nontype Template Parameters\NTP_01.cpp">
+      <Filter>06_Nontype Template Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="06_Nontype Template Parameters\NTP_02.cpp">
+      <Filter>06_Nontype Template Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="06_Nontype Template Parameters\NTP_03.cpp">
+      <Filter>06_Nontype Template Parameters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -61,20 +61,20 @@ T Stack<T>::top( ) const
 template <typename T>
 Stack<T>::Stack( const Stack<T>& stack )
 {
-	m_elems = stack.m_elems;
+	*this = stack;
 }
 
 template <typename T>
 Stack<T>::Stack( Stack<T>&& stack )
 {
-	m_elems = std::move( stack.m_elems );
+	*this = std::move( stack );
 }
 
 template <typename T>
 Stack<T>& Stack<T>::operator=( const Stack<T>& stack )
 {
 	m_elems = stack.m_elems;
-	*this;
+	return *this;
 }
 
 template <typename T>
