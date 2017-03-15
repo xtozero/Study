@@ -141,17 +141,128 @@ std::transform( source.begin( ), source.end( ), dest.begin( ), addValue<int, 5> 
 - 데이터형이 아닌 함수 파라미터에는 몇 가지 제약이 있다. [(참고 사이트)](http://en.cppreference.com/w/cpp/language/template_parameters#Template_template_parameter)
 - C++17 이전 까지는 아래와 같다.
 
-1\. 정수형이나 산술타입의 경우 컴파일 시간에 평가되어야 한다.
+1\. 정수형이고 [산술타입](http://en.cppreference.com/w/c/language/arithmetic_types)의 경우 컴파일 시간에 평가되어야 한다.
+```c++
+// NTP_03.cpp
+template <typename T, int N>
+class IntegralArithmetic {};
+
+// 정수이고 산술 타입인 경우
+IntegralArithmetic<int, 10> intLiteral;
+
+//int n = 10;
+//IntegralArithmetic<int, n> intVariable; // error
+
+const int cn = 10;
+IntegralArithmetic<int, cn> constInt;
+```
 
 2\. 포인터형의 경우 null 포인터나 std::nullptr_t 타입으로 컴파일 시간에 평가되거나 정적 지속성( static storage duration )과 링크( externel 혹은 internel )를 가져야 한다.
-
+> 특히 문자열 리터럴, 배열 요소의 주소, 비정적 멤버 변수의 주소는 템플린 인자로 사용될 수 없다.
 > 정적 지속성( static storage duration )은 프로그램이 시작될 때 자동으로 할당되어 프로그램이 끝나면 자동으로 해제되는 생명주기를 같는 객체를 뜻한다. ex) 전역 변수, static 변수
 
+
+```c++
+// NTP_04.cpp
+template <char* P>
+class PointerType {};
+
+// 전역 변수
+char g_c;
+extern char g_ec;
+constexpr char* pNull = nullptr;
+//const char* pNull = nullptr; -> const는 error
+constexpr char* gStringLiteral = "Hello";
+char gArray[10] = {};
+
+class ClassA
+{
+public:
+	static char success;
+	char error;
+};
+
+ClassA errorClass;
+
+...
+
+// 포인터 형일 경우
+PointerType<&g_c> globalChar;
+PointerType<&g_ec> externGlobalChar;
+PointerType<pNull> nullPointer;
+// PointerType<nullptr> nullptrValue; // -> gcc에서는 성공, vs2015 community 버전에서 error
+
+PointerType<gStringLiteral> stringLiteral; // error
+PointerType<&gArray[0]> AddressofArray; // error
+
+PointerType<&errorClass.error> AddressofNonStaticMember; // error
+PointerType<&errorClass.success> AddressofStaticMember; // gcc에서 error, vs2015 community 버전에서 성공
+PointerType<&ClassA::success> AddressofStaticMember;
+```
+
 3\. 함수포인터형의 경우 컴파일 시간에 null 포인터로 평가되거나 링크를 가져야 한다.
+```c++
+// NTP_05.cpp
+constexpr void( *globalNullFuncPtr )() = nullptr;
+void normalFunc( ) {}
+
+...
+
+// 함수 포인터 형일 경우
+FunctionPointerType<globalNullFuncPtr> NullFuncPtr;
+FunctionPointerType<&normalFunc> AddressOfFunc;
+}
+```
 
 4\. lvalue 참조형의 경우 임시 변수이거나 이름이 없는 lvalue이거나 링크가 없는 lvalue이면 안된다.( 즉 인자는 반드시 링크가 있어야 한다. )
+```c++
+// NTP_06.cpp
+int Foo( ) { return 1; }
+int gn = 0;
 
-5\. 클래스 멤버에 대한 포인터형의 경우 정적 멤버 ( ex) &Class::Member로 표현 가능한 멤버 )이거나 null 포인터나 std::nullptr_t 타입으로 컴파일 시간에 평가되어야 한다.
+...
+
+LvalueReference<Foo( )> FunctionReturn; // error
+	
+int n;
+LvalueReference<n> Nolinkage; // error
+LvalueReference<gn> linkage;
+```
+
+5\. 클래스 멤버에 대한 포인터형의 경우 &Class::Member로 표현되거나 null 포인터나 std::nullptr_t 타입으로 컴파일 시간에 평가되어야 한다.
+```c++
+// NTP_07.cpp
+class ClassA
+{
+public:
+	char member;
+};
+
+ClassA errorClass;
+
+template <char ClassA::*P>
+class MemberPointer {};
+
+...
+
+// 클래스 멤버 포인터일 경우
+MemberPointer<&ClassA::member> AddressofMember;
+MemberPointer<nullptr> nullPointer;
+```
+- 그 외 템플릿 인자로 사용할 수 없는 경우를 예를 들면 아래와 같다.
+```c++
+// NTP_08.cpp
+// 실수형은 불가
+template <double VAT>
+double process( double v )
+{
+	return v * VAT;
+}
+
+// 클래스형 객체는 불가
+template <std::string name>
+class MyClass {};
+``` 
 
 - C++17 이후 부터는 아래와 같다.
 
@@ -163,6 +274,6 @@ std::transform( source.begin( ), source.end( ), dest.begin( ), addValue<int, 5> 
 	> SubObject는 다른 객체에 포함된 객체이다, ex ) 클래스의 멤버, 배열의 요소, 
 
 2. 임시 객체
-3. 문자열 상수
+3. 문자열 리터럴
 4. typeid의 결과
-5. 미리 정의된 변수 __func__
+5. 미리 정의된 변수 \_\_func\_\_
