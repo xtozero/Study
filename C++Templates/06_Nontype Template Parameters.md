@@ -159,6 +159,7 @@ IntegralArithmetic<int, cn> constInt;
 
 2\. 포인터형의 경우 null 포인터나 std::nullptr_t 타입으로 컴파일 시간에 평가되거나 정적 지속성( static storage duration )과 링크( externel 혹은 internel )를 가져야 한다.
 > 특히 문자열 리터럴, 배열 요소의 주소, 비정적 멤버 변수의 주소는 템플린 인자로 사용될 수 없다.
+
 > 정적 지속성( static storage duration )은 프로그램이 시작될 때 자동으로 할당되어 프로그램이 끝나면 자동으로 해제되는 생명주기를 같는 객체를 뜻한다. ex) 전역 변수, static 변수
 
 

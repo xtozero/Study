@@ -73,6 +73,11 @@ Stack<T>::Stack( Stack<T>&& stack )
 template <typename T>
 Stack<T>& Stack<T>::operator=( const Stack<T>& stack )
 {
+	if ( this == &stack )
+	{
+		return *this;
+	}
+
 	m_elems = stack.m_elems;
 	return *this;
 }
@@ -80,6 +85,11 @@ Stack<T>& Stack<T>::operator=( const Stack<T>& stack )
 template <typename T>
 Stack<T>& Stack<T>::operator=( Stack<T>&& stack )
 {
+	if ( this == &stack )
+	{
+		return *this;
+	}
+
 	m_elems = std::move( stack.m_elems );
 	return *this;
 }
@@ -92,7 +102,8 @@ int main( )
 	IntStack intStack[10];
 
 	using IStack = Stack<int>;
-	const IStack Istack;
+	IStack Istack;
+	IStack Istack2;
 
 	Stack<float*> floatPtrStack;
 	Stack<Stack<int> > intStackStack;

@@ -52,6 +52,9 @@
     <Filter Include="06_Nontype Template Parameters">
       <UniqueIdentifier>{0a4df6db-a394-4e70-9115-143a7cd08cc2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07_Tricky Basics">
+      <UniqueIdentifier>{52b76cc4-de2e-47f3-9757-31ed512e722d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="04_Function Template\main.cpp">
@@ -281,6 +284,36 @@
     </ClCompile>
     <ClCompile Include="06_Nontype Template Parameters\NTP_08.cpp">
       <Filter>06_Nontype Template Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_01.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_02.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_03.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_04.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_05.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_06.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_07.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_08.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_09.cpp">
+      <Filter>07_Tricky Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="07_Tricky Basics\TB_10.cpp">
+      <Filter>07_Tricky Basics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

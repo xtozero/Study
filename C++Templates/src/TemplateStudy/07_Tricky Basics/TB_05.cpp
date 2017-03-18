@@ -1,13 +1,12 @@
-#include <cstdlib>
 #include <iostream>
 #include <deque>
 #include <vector>
 
-template <typename T, typename CONT = std::vector<T>>
+template <typename T, template<typename ELEM> class CONT = std::deque>
 class Stack
 {
 private:
-	CONT m_elems;
+	CONT<T> m_elems;
 
 public:
 	void push( const T& elems );
@@ -25,13 +24,14 @@ public:
 	Stack<T, CONT>& operator=( Stack<T, CONT>&& stack );
 };
 
-template <typename T, typename CONT>
+
+template <typename T, template<typename> class CONT>
 void Stack<T, CONT>::push( const T& value )
 {
 	m_elems.push_back( value );
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 void Stack<T, CONT>::pop( )
 {
 	if ( empty( ) )
@@ -41,7 +41,7 @@ void Stack<T, CONT>::pop( )
 	m_elems.pop_back( );
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 T Stack<T, CONT>::top( ) const
 {
 	if ( empty( ) )
@@ -51,19 +51,19 @@ T Stack<T, CONT>::top( ) const
 	return m_elems.back( );
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 Stack<T, CONT>::Stack( const Stack<T, CONT>& stack )
 {
 	*this = stack;
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 Stack<T, CONT>::Stack( Stack<T, CONT>&& stack )
 {
 	*this = std::move( stack );
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 Stack<T, CONT>& Stack<T, CONT>::operator=( const Stack<T, CONT>& stack )
 {
 	if ( this == &stack )
@@ -75,7 +75,7 @@ Stack<T, CONT>& Stack<T, CONT>::operator=( const Stack<T, CONT>& stack )
 	return *this;
 }
 
-template <typename T, typename CONT>
+template <typename T, template<typename> class CONT>
 Stack<T, CONT>& Stack<T, CONT>::operator=( Stack<T, CONT>&& stack )
 {
 	if ( this == &stack )
@@ -89,27 +89,5 @@ Stack<T, CONT>& Stack<T, CONT>::operator=( Stack<T, CONT>&& stack )
 
 int main( )
 {
-	try 
-	{
-		Stack<int> intStack;
-
-		Stack<double, std::deque<double>> dequeStack;
-
-		intStack.push( 7 );
-		std::cout << intStack.top( ) << std::endl;
-		intStack.pop( );
-
-		intStack.push( 8 );
-		Stack<int> moveStack = std::move( intStack );
-
-		dequeStack.push( 42.42 );
-		std::cout << dequeStack.top( ) << std::endl;
-		dequeStack.pop( );
-		dequeStack.pop( );
-	}
-	catch ( std::exception ex )
-	{
-		std::cerr << "Exception: " << ex.what( ) << std::endl;
-		return EXIT_FAILURE;
-	}
+	Stack<int, std::vector> vStack; // error 수정 버전은 TB_06.cpp
 }
