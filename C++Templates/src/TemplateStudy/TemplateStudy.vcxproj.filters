@@ -55,11 +55,20 @@
     <Filter Include="07_Tricky Basics">
       <UniqueIdentifier>{52b76cc4-de2e-47f3-9757-31ed512e722d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="08_Using Template in Practice">
+      <UniqueIdentifier>{b42d8aef-b299-4135-80d0-e5b119cfc2d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08_Using Template in Practice\UTIP_01">
+      <UniqueIdentifier>{52648f67-d1ea-4642-946a-162373546989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08_Using Template in Practice\UTIP_02">
+      <UniqueIdentifier>{e3cbacb3-3e94-4a52-b32c-208a703453c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08_Using Template in Practice\UTIP_04">
+      <UniqueIdentifier>{645c6cd2-ab9f-4b20-95d6-ba51063b0ba3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="04_Function Template\main.cpp">
-      <Filter>04_Function Template</Filter>
-    </ClCompile>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
       <Filter>02_Overload Resolution</Filter>
     </ClCompile>
@@ -315,6 +324,69 @@
     <ClCompile Include="07_Tricky Basics\TB_10.cpp">
       <Filter>07_Tricky Basics</Filter>
     </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_01.cpp">
+      <Filter>08_Using Template in Practice\UTIP_01</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_01.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_02.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_03.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_04.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_05.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_06.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_07.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_08.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_09.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_10.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\FT_11.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Function Template\Summary.cpp">
+      <Filter>04_Function Template</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_02.cpp">
+      <Filter>08_Using Template in Practice\UTIP_02</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_01_MAIN.cpp">
+      <Filter>08_Using Template in Practice\UTIP_01</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_02_MAIN.cpp">
+      <Filter>08_Using Template in Practice\UTIP_02</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_02_INST.cpp">
+      <Filter>08_Using Template in Practice\UTIP_02</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_03.cpp">
+      <Filter>08_Using Template in Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_04.cpp">
+      <Filter>08_Using Template in Practice\UTIP_04</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_04_INST.cpp">
+      <Filter>08_Using Template in Practice\UTIP_04</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_04_MAIN.cpp">
+      <Filter>08_Using Template in Practice\UTIP_04</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -346,6 +418,15 @@
     </ClInclude>
     <ClInclude Include="03_One Definition Rule\Cross-Translation\ODR_15.h">
       <Filter>03_One Definition Rule\Cross-Translation\ODR_15</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_01.hpp">
+      <Filter>08_Using Template in Practice\UTIP_01</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_02.hpp">
+      <Filter>08_Using Template in Practice\UTIP_02</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_04.hpp">
+      <Filter>08_Using Template in Practice\UTIP_04</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

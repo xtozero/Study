@@ -201,29 +201,29 @@ int main()
 	std::cout << auto_add( 1.2345f, 2L ) << std::endl;
 
 	// 함수 템플릿의 오버로딩
-	max( 7, 42, 68 );			// 세 인자를 위한 템플릿 호출
-	max( 7.0, 42.0 );			// max<double> 호출
-	max( 'a', 'b' );			// max<char> 호출
-	max( 7, 42 );				// nontemplate 함수 max 호출
-	max<>( 7, 42 );				// max<int> 호출
-	max<double>( 7, 42 );		// max<double> 호출
-	max( 'a', 42.7 );			// nontemplate 함수 max 호출
+	::max( 7, 42, 68 );			// 세 인자를 위한 템플릿 호출
+	::max( 7.0, 42.0 );			// max<double> 호출
+	::max( 'a', 'b' );			// max<char> 호출
+	::max( 7, 42 );				// nontemplate 함수 max 호출
+	::max<>( 7, 42 );				// max<int> 호출
+	::max<double>( 7, 42 );		// max<double> 호출
+	::max( 'a', 42.7 );			// nontemplate 함수 max 호출
 
 	string hey = "hey";
 	string you = "you";
 
-	max( hey, you );
+	::max( hey, you );
 
 	int a = 1;
 	int b = 2;
 	int* p1 = &b;
 	int* p2 = &a;
 
-	max( p1, p2 );
+	::max( p1, p2 );
 
 	const char* s1 = "Alpha";
 	const char* s2 = "Bong";
-	max( s1, s2 );
+	::max( s1, s2 );
 
 	// 함수 템플릿 오버로딩이 예상치 못하게 동작하는 경우
 	// VS2015에서는 잘 컴파일되나 gcc에서는 크래시가 난다.

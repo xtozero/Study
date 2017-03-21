@@ -6,6 +6,7 @@
 
 ## 함수 템플릿 정의
 ```c++
+// FT_01.cpp
 template <typename T>
 T add( T lhs, T rhs )
 {
@@ -24,6 +25,7 @@ T add( T lhs, T rhs )
 > struct를 typename 대신 사용할 수 없다.
 
 ```c++
+// FT_01.cpp
 template <class T>
 T add( T lhs, T rhs )
 {
@@ -34,6 +36,7 @@ T add( T lhs, T rhs )
 ## 함수 템플릿 사용법
 - add 함수 템플릿은 다음과 같이 사용할 수 있다.
 ```c++
+// FT_01.cpp
 int main()
 {
 	cout << add( 1, 2 ) << endl; // 3이 출력
@@ -55,6 +58,7 @@ inline int add( int lhs, int rhs )
 
 - 함수 템플릿 내에서 사용된 모든 연산자를 지원하지 않는 데이터형에 대해서 템플릿을 인스턴스화하면 컴파일 오류가 발생한다.
 ```c++
+// FT_02.cpp
 UnsurpportedOperator lhs;
 UnsurpportedOperator rhs;
 
@@ -74,6 +78,7 @@ add( lhs, rhs );
 - 함수 템플릿을 호출하면 인자를 기반으로 템플릿 파라미터가 결정된다.
 - 인자 추론 과정에서 데이터형 변환은 적용되지 않는다.
 ```c++
+// FT_03.cpp
 add( 4, 7 ); // ok T는 두 인자에 대해 int
 add( 4, 4.2 ); // error 첫 번째 T는 int 두 번째 T는 double
 
@@ -110,6 +115,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 		2\. expr형식을 ParamType에 대해서 pattern-matching 방식으로 대응시켜 T를 결정한다.
 		
 		```c++
+		// FT_04.cpp
 		template <typename T>
 		void CallByReference( T& param ) {}
 
@@ -131,6 +137,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 		2\. expr이 rvalue이면 1의 규칙이 적용된다.
 	
 		```c++
+		// FT_05.cpp
 		template <typename T>
 		void CallByForwardReference( T&& param ) {}
 
@@ -149,6 +156,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 		2\. expr에 const volatile mutable 키워드가 존재하면 해당 키워드를 무시한다.
 		
 		```c++
+		// FT_06.cpp
 		template <typename T>
 		void CallByValue( T param ) {}
 
@@ -179,6 +187,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 - 템플릿 파라미터는 원하는 대로 얼마든지 사용할 수 있지만 함수 템플릿에서는 기본 템플릿 인자를 명시할 수 없다. ( c++ 11 지원 이전 컴파일러까지 )
 - 두 호출 파라미터를 다르게 사용하여 add 함수를 정의하면 아래와 같이 정의할 수 있다.
 ```c++
+// FT_07.cpp
 template <typename T1, typename T2>
 T1 add( T1 lhs, T2 rhs )
 {
@@ -190,6 +199,7 @@ add( 1.0f, 1 );
 - 두 호출 파라미터를 사용한 add는 서로 다른 자료형을 사용하여 호출할 수 있지만, 반환형이 선언되어야만 한다는 문제가 있다.
 - 이 문제를 개선하기 위해서 아래와 같이 템플릿 파라미터를 추가하여 반환형을 결정할 수 있다.
 ```c++
+// FT_07.cpp
 template <typename T1, typename T2, typename R>
 R add( T1 lhs, T2 rhs )
 {
@@ -202,6 +212,7 @@ add<int, double, double>( 1, 1.f );
 - 템플릿과 호출 파라미터 사이에 어떤 관계도 없거나 템플릿 파라미터가 결정될 수 없으면 템플릿 인자를 함수 호출 시에 명시적으로 지정해야 한다.
 - 함수를 호출할 때마다 매번 모든 파라미터를 지정하는 것은 매우 번거로운 일인데 파라미터의 순서를 바꾸는 것으로 이를 개선할 수 있다.
 ```c++
+// FT_07.cpp
 template <typename R, typename T1, typename T2>
 R add( T1 lhs, T2 rhs )
 {
@@ -214,6 +225,7 @@ add<double>( 1, 1.f );
 - 첫 번째 파라미터는 명시적으로 지정하고 나머지는 인자를 통해 int와 double로 추론된다.
 - c++14 에서는 다음과 같이 좀 더 간결한 방법이 가능하다.
 ```c++
+// FT_07.cpp
 template <typename T1, typename T2>
 decltype( T1() + T2() ) new_add( T1 lhs, T2 rhs )
 {
@@ -336,6 +348,8 @@ const T& new_max( const T& first, const T& second, const T& third )
 	return new_max( new_max( first, second ), third ); // max( first, second )가 만든 임시 지역 변수가 함수에 의해 참조자로 반환될 수도 있다. )
 }
 
+// 함수 템플릿 오버로딩이 예상치 못하게 동작하는 경우
+// vs 2015 community에서는 잘 컴파일되나 gcc에서는 warning 메세지가 뜨고 크래시가 난다.
 const char* st1 = "Template";
 const char* st2 = "Study";
 const char* st3 = "Successfull";
@@ -365,5 +379,5 @@ const int& min( const int& lhs, const int& rhs )
 	return lhs < rhs ? lhs : rhs;
 }
 
-min( 1, 2, 3 ); // vs 2015 community에서는 min( const int& lhs, const int& rhs )호출 g++에서는 빌드 에러
+min( 1, 2, 3 ); // vs 2015 community에서는 min( const int& lhs, const int& rhs )호출 g++에서는 min( T, T ) 호출
 ```
