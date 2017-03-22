@@ -12,7 +12,7 @@ T max( const T& lhs, const T& rhs )
 template <typename T>
 T* const& max( T* const & a, T* const & b )
 {
-	std::cout << "T* const & a, T* const & b" << std::endl;
+	std::cout << "max( T* const & a, T* const & b )" << std::endl;
 	return *a < *b ? b : a;
 }
 

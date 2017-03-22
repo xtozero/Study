@@ -179,7 +179,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 - 함수 템플릿은 두 종류의 파라미터를 가진다.
 
 1\. 템플릿 파라미터 : 함수 템플릿 이름 앞 꺾쇠 내에 선언된 것
-> template <typename T>
+> template \<typename T\>
 
 2\. 호출 파라미터 : 함수 템플릿 이름 뒤 괄호 안에 선언된 것
 > ...add( T lhs, T rhs )
@@ -300,7 +300,7 @@ T max( const T& lhs, const T& rhs )
 template <typename T>
 T* const& max( T* const & a, T* const & b )
 {
-	cout << "T* const & a, T* const & b" << endl;
+	cout << "max( T* const & a, T* const & b )" << endl;
 	return *a < *b ? b : a;
 }
 
@@ -334,18 +334,21 @@ max( s1, s2 );
 template <typename T>
 const T& new_max( const T& lhs, const T& rhs )
 {
+	std::cout << "new_max( const T& lhs, const T& rhs )" << std::endl;
 	return lhs < rhs ? rhs : lhs;
 }
 
 const char* new_max( const char* lhs, const char* rhs )
 {
+	std::cout << "const char* new_max( const char* lhs, const char* rhs )" << std::endl;
 	return strcmp( lhs, rhs ) < 0 ? rhs : lhs;
 }
 
 template <typename T>
 const T& new_max( const T& first, const T& second, const T& third )
 {
-	return new_max( new_max( first, second ), third ); // max( first, second )가 만든 임시 지역 변수가 함수에 의해 참조자로 반환될 수도 있다. )
+	std::cout << "new_max( const T& first, const T& second, const T& third )" << std::endl;
+	return new_max( new_max( first, second ), third ); // new_max( const char* lhs, const char* rhs )가 만든 임시 지역 변수가 함수에 의해 참조자로 반환될 수도 있다. )
 }
 
 // 함수 템플릿 오버로딩이 예상치 못하게 동작하는 경우
