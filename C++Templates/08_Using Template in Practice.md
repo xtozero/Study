@@ -176,3 +176,148 @@ template void print_typeof<double>( const double& );
 - 분리 모델을 구현한 컴파일러가 드물고 관련 키워드 export는 c++11 부터 사용하지 않게 되었다. ([참고링크](http://en.cppreference.com/w/cpp/keyword/export))
 
 ## 템플릿과 인라인
+- **함수 템플릿과 인라인 함수 모두 여러 번역 단위에 정의될 수 있다.** 정의를 포함한 헤더 파일을 여러 cpp 파일에 포함시키면 해당 번역 단위마다 정의된다. ([ODR 참조](https://github.com/xtozero/Study/blob/master/C%2B%2BTemplates/03_One%20Definition%20Rule.md))
+```c++
+// UTIP_05.hpp
+#include <iostream>
+
+template <typename T>
+void print_typeof( const T& x )
+{
+	std::cout << typeid(x).name( ) << std::endl;
+}
+
+// UTIP_05_TR1.h
+#ifndef  _UTIP_05_TR1_H_
+#define _UTIP_05_TR1_H_
+
+void print_typeof_int( );
+
+#endif
+
+
+// UTIP_05_TR1.cpp
+#include "UTIP_05_TR1.h"
+
+#include "UTIP_05.hpp"
+
+void print_typeof_int( )
+{
+	int value = 0;
+	print_typeof( value );
+}
+
+// UTIP_05.cpp
+#include "UTIP_05_TR1.h"
+
+#include "UTIP_05.hpp"
+
+
+int main( )
+{
+	int value = 0;
+	print_typeof( value );
+	print_typeof_int( );
+}
+```
+- 이 때문에 함수 템플릿이 기본적으로 인라인이라고 생각할 수 있지만 **템플릿 함수는 인라인이 아니다.**
+- **인라인으로 취급되는 함수를 작성하기 위해서는 inline 지정자를 사용**해야 한다.
+
+## 전컴파일된 헤더
+- 헤더 파일이 커지면 컴파일에 오랜 시간이 걸릴 수 있다. 템플릿은 이런 경향을 부추길 수 있으므로 컴파일 시간을 단축하기 위해서 전컴파일된 헤더(precompiled header)라고 불리는 기법이 존재한다.
+- 전컴파일된 헤더는 표준 밖에서 정의됐으므로 컴파일러에 따라서 다르다. 따라서 여기서는 일반적인 동작에 대해서 알아본다.
+- 컴파일러가 파일 내 코드를 번역할 때 컴파일러는 파일은 처음부터 끝까지 읽으며 토큰을 처리하고 룩업을 위해 기호 테이블을 만드는 등 내부 상태를 적응시키면서 목적파일을 생성한다.
+- **전컴파일된 헤더 기법은 많은 파일이 같은 코드로 시작한다는 점**에 착안하였다.
+
+1\. 같은 코드에 대해 컴파일한 후 그 시점에서 컴파일러의 완전한 상태를 저장한다.
+
+2\. 같은 코드를 사용하는 프로그램의 모든 파일에 대해 컴파일하기 전에 저장된 전컴파일된 헤더를 불러와 다른 부분부터 컴파일을 시작한다.
+
+- 전컴파일 헤더를 효율적으로 쓰기 위해서는 되도록 **시작하는 부분에 같은 코드가 많이 들어가게 해야** 한다.
+> 빌드 시간의 상당 부분은 #include 지시자가 차지하므로 이들의 순서를 맞추는 것이 좋다.
+
+> 어떤 프로그래머는 불필요한 헤더를 #include로 불러오더라도 전컴파일 헤더를 사용해 컴파일 시간을 줄이는 편을 선택하기도 한다. ( ex 모든 표준 헤더를 포함한 std.hpp라는 헤더 파일을 생성해 모든 표준 헤더를 불러들이게 할 수도 있다. )
+
+## 템플릿 디버그하기
+- 템플릿을 디버깅할 때 직면할 수 있는 문제는 크게 두 종류가 있다.
+
+1\. 작성한 템플릿 코드가 문서화한 조건을 만족하는 어떠한 템플릿 인자에 대해서도 정상적으로 동작함을 어떻게 확신할 수 있을지
+
+2\. 템플릿 사용자가 문서화된 대로 템플릿을 사용하였는데 동작하지 않을 떄 어떤 요구사항을 어겼는지를 찾아낼 수 있을지이다.
+
+- 템플릿 파라미터에는 두 종류의 제약 조건이 있을 수 있다.
+
+1\. 문법적 제약조건 ( syntactic constraints ) : 컴파일 오류를 발생시키는 제약 조건
+> 특정 생성자가 존재할 것, 특정 함수 호출이 모호하지 않아야 할 것 등
+
+2\. 의미론적 제약조건 ( semantic constraints ) : 문법적 제약 조건외의 조건들 예를 들면 템플릿 파라미터가 < 연산자를 정의해놓길( 이것은 문법적 제약조건이다. ) 요구하는 것은 실제로 파라미터가 어떤 종류의 정렬을 정의할 수 있어야 한다. ex ) 사전식 순서로 문자을 정렬하는 것 등
+
+- 이런 템플릿 라이브러리의 제약 조건을 개념 ( concept )이라고 한다.
+> C++ 표준 라이브러리는 무작위 접근 반복자와 기본 생성 가능이라는 개념을 사용한다.
+
+- 이런 개념들이 템플릿 구현이나 사용중에 어떻게 위반됐는지를 결정하는 것을 템플릿 코드 디버깅이라 부를 수 있다.
+
+## 긴 오류 메세지 해석
+- 일반적인 컴파일 오류는 꽤 간결하고 어디가 문제인지 바로 알 수 있다.
+- 하지만 템플릿에서는 이 일이 그렇게 쉽지 않다.
+```c++
+// UTIP_06.cpp
+#include <algorithm>
+#include <functional>
+#include <list>
+#include <string>
+
+int main( )
+{
+	std::list<std::string> coll;
+	
+	auto pos = std::find_if( coll.begin( ), coll.end( ), std::bind2nd(std::greater<int>(), "A") );
+}
+```
+- 위의 코드를 g++에서 돌린 결과 나오는 오류 메세지는 다음과 같다.
+```
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_algobase.h:71:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\algorithm:61,
+                 from UTIP_06.cpp:1:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\predefined_ops.h: In instantiation of 'bool __gnu_cxx::__ops::_Iter_pred
+<_Predicate>::operator()(_Iterator) [with _Iterator = std::_List_iterator<std::__cxx11::basic_string<char> >; _Predicate
+ = std::binder2nd<std::greater<int> >]':
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_algo.h:104:42:   required from '_InputIterator std::__find_if(_Input
+Iterator, _InputIterator, _Predicate, std::input_iterator_tag) [with _InputIterator = std::_List_iterator<std::__cxx11::
+basic_string<char> >; _Predicate = __gnu_cxx::__ops::_Iter_pred<std::binder2nd<std::greater<int> > >]'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_algo.h:161:23:   required from '_Iterator std::__find_if(_Iterator,
+_Iterator, _Predicate) [with _Iterator = std::_List_iterator<std::__cxx11::basic_string<char> >; _Predicate = __gnu_cxx:
+:__ops::_Iter_pred<std::binder2nd<std::greater<int> > >]'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_algo.h:3815:28:   required from '_IIter std::find_if(_IIter, _IIter,
+ _Predicate) [with _IIter = std::_List_iterator<std::__cxx11::basic_string<char> >; _Predicate = std::binder2nd<std::gre
+ater<int> >]'
+UTIP_06.cpp:10:94:   required from here
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\predefined_ops.h:234:30: error: no match for call to '(std::binder2nd<st
+d::greater<int> >) (std::__cxx11::basic_string<char>&)'
+  { return bool(_M_pred(*__it)); }
+                              ^
+In file included from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_function.h:1128:0,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\string:48,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\random:40,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\bits\stl_algo.h:66,
+                 from c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\algorithm:62,
+                 from UTIP_06.cpp:1:
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\binders.h:157:7: note: candidate: typename _Operation::result_type s
+td::binder2nd<_Operation>::operator()(const typename _Operation::first_argument_type&) const [with _Operation = std::gre
+ater<int>; typename _Operation::result_type = bool; typename _Operation::first_argument_type = int]
+       operator()(const typename _Operation::first_argument_type& __x) const
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\binders.h:157:7: note:   no known conversion for argument 1 from 'st
+d::__cxx11::basic_string<char>' to 'const first_argument_type& {aka const int&}'
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\binders.h:163:7: note: candidate: typename _Operation::result_type s
+td::binder2nd<_Operation>::operator()(typename _Operation::first_argument_type&) const [with _Operation = std::greater<i
+nt>; typename _Operation::result_type = bool; typename _Operation::first_argument_type = int]
+       operator()(typename _Operation::first_argument_type& __x) const
+       ^
+c:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\binders.h:163:7: note:   no known conversion for argument 1 from 'st
+d::__cxx11::basic_string<char>' to 'std::binary_function<int, int, bool>::first_argument_type& {aka int&}'
+```
+- 오류 메세지를 잘 살펴보면 std::binder2nd를 잘 못 작성했다는 것을 알 수 있다.
+> error: no match for call to '(std::binder2nd<std::greater<int> >) (std::__cxx11::basic_string<char>&)' 이 부분을 보면 된다.
+
+- 그러나 이렇게 긴 메세지는 해석하기 어렵다. 추후 concept이 표준에 도입되면 이러한 에러 메세지를 명확하게 변경할 수 있다.

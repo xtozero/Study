@@ -67,6 +67,9 @@
     <Filter Include="08_Using Template in Practice\UTIP_04">
       <UniqueIdentifier>{645c6cd2-ab9f-4b20-95d6-ba51063b0ba3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="08_Using Template in Practice\UTIP_05">
+      <UniqueIdentifier>{8e7a2bf3-4e01-4da3-a9b6-26f5740d4f9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -387,6 +390,15 @@
     <ClCompile Include="08_Using Template in Practice\UTIP_04_MAIN.cpp">
       <Filter>08_Using Template in Practice\UTIP_04</Filter>
     </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_05.cpp">
+      <Filter>08_Using Template in Practice\UTIP_05</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_05_TR1.cpp">
+      <Filter>08_Using Template in Practice\UTIP_05</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_06.cpp">
+      <Filter>08_Using Template in Practice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -427,6 +439,12 @@
     </ClInclude>
     <ClInclude Include="08_Using Template in Practice\UTIP_04.hpp">
       <Filter>08_Using Template in Practice\UTIP_04</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_05.hpp">
+      <Filter>08_Using Template in Practice\UTIP_05</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_05_TR1.h">
+      <Filter>08_Using Template in Practice\UTIP_05</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
