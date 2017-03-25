@@ -70,6 +70,12 @@
     <Filter Include="08_Using Template in Practice\UTIP_05">
       <UniqueIdentifier>{8e7a2bf3-4e01-4da3-a9b6-26f5740d4f9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="08_Using Template in Practice\UTIP_08">
+      <UniqueIdentifier>{037f6475-ebf1-4453-aa7a-a4a9a975d869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09_Fundamentals in Depth">
+      <UniqueIdentifier>{8f6cbc60-ee19-4473-b8f3-6172a77c4cfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -399,6 +405,21 @@
     <ClCompile Include="08_Using Template in Practice\UTIP_06.cpp">
       <Filter>08_Using Template in Practice</Filter>
     </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_07.cpp">
+      <Filter>08_Using Template in Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_08.cpp">
+      <Filter>08_Using Template in Practice\UTIP_08</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Using Template in Practice\UTIP_08_MAIN.cpp">
+      <Filter>08_Using Template in Practice\UTIP_08</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_01.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_02.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -445,6 +466,9 @@
     </ClInclude>
     <ClInclude Include="08_Using Template in Practice\UTIP_05_TR1.h">
       <Filter>08_Using Template in Practice\UTIP_05</Filter>
+    </ClInclude>
+    <ClInclude Include="08_Using Template in Practice\UTIP_08.hpp">
+      <Filter>08_Using Template in Practice\UTIP_08</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

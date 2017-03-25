@@ -321,3 +321,279 @@ d::__cxx11::basic_string<char>' to 'std::binary_function<int, int, bool>::first_
 > error: no match for call to '(std::binder2nd<std::greater<int> >) (std::__cxx11::basic_string<char>&)' 이 부분을 보면 된다.
 
 - 그러나 이렇게 긴 메세지는 해석하기 어렵다. 추후 concept이 표준에 도입되면 이러한 에러 메세지를 명확하게 변경할 수 있다.
+
+## 얕은 인스턴스화
+- 긴 오류 메세지 해석에서 보았던 에러와 같이 긴 오류 메세지로 인한 디버깅의 어려움을 해소하기 위해서 템플릿 인자가 제약 조건들을 만족하는지 조기에 확인해볼 수 있다.
+```c++
+// UTIP_07.cpp
+#include <iostream>
+
+template <typename T>
+void clear( T const& p )
+{
+	*p = 0;
+}
+
+template <typename T>
+void core( T const& p )
+{
+	clear( p );
+}
+
+template <typename T>
+void middle( typename T::Index p )
+{
+	core( p );
+}
+
+template <typename T>
+void shell( T const& env )
+{
+	typename T::Index i;
+	middle<T>( i );
+}
+
+class Client
+{
+public:
+	typedef int Index;
+};
+
+int main( )
+{
+	Client main_client;
+	shell( main_client );
+}
+```
+- 이 예제는 가장 깊은 계층인 core()가  int형으로 인스턴스화돼어 *연산으로 역참조할 수 없기 때문에 오류가 발생했다.
+- 좋은 진단 정보라면 이 문제를 발생시킨 모든 계층에 대한 추적 정보를 담고 있겠지만 '긴 오류 메세지 해석' 부분에서 보았듯이 너무 많은 정보는 오히려 거추장스럽다.
+- 얕은 인스턴스화는 **깊은 수준의 템플릿에 대한 요청을 만족시키지 못하는 템플릿 인자로 인스턴화될 때 얕은 단계에서 오류를 발생시키게 하기 위해 일부러 의미 없는 코드를 삽입**하는 방식이다.
+- 앞선 예제에서는 shell에 다음과 같은 코드를 삽입하여 T::Index형의 값을 역 참조할 수 있다.
+```c++
+// UTIP_07.cpp
+template <typename T>
+inline void ignore( const T& )
+{
+}
+
+template <typename T>
+void shell( const T& env )
+{
+	class ShallowChecks
+	{
+		void deref( T::Index ptr )
+		{
+			ignore( *ptr );
+		}
+	};
+	typename T::Index i;
+	middle<T>( i );
+}
+```
+- T의 T::Index가 역참조할 수 없는 데이터형이라면 오류는 이제 지역 클래스인 ShallowChecks에서 발생한다.
+- 지역 클래스는 실제로 사용되지 않기 때문에 추가된 코드는 shell() 함수의 실행 시간에 영향을 주지 않는다.
+- 많은 컴파일러는 ShallowChecks 클래스가 실제로 사용되지 않는다고 경고할텐데 ignore와 같은 템플릿을 사용하여 이런 경고를 숨길 수 있다 다만 코드의 복잡도가 증가한다.
+- c++11 에서는 **static_assert** 구문을 사용하여 제약조건을 검사할 수 있다.
+```c++
+// UTIP_07.cpp
+template <typename T>
+void shell( const T& env )
+{
+	static_assert( std::is_pointer<typename T::Index>(), "is not pointer" );
+
+	typename T::Index i = T::Index();
+	middle<T>( i );
+}
+```
+
+## 긴 기호
+- '긴 오류 메세지 해석' 부분에서 템플릿의 또 다른 문제인 인스턴화된 템플릿 코드가 매우 긴 기호로 바뀌는 현상을 확인할 수 있다.
+- 예를 들어 std::string은 다음과 같이 확장된다.
+```c++
+std::__cxx11::basic_string<char>
+```
+- c++ 표준 라이브러리를 사용하는 일부 프로그램은 10000자가 넘는 기호를 생성하기도 한다. 이런 긴 기호는 컴파일러, 링커, 혹은 디버거에서 오류나 경고를 생성하게 할 수 있다.
+- 요즘 컴파일러는 이런 문제를 줄이기 위해서 압축 기술을 사용하는데 오류 메세지에서 압축된 이름을 사용하면 그 이름이 무엇을 뜻하는지 분명하게 드러나지 않는다.
+
+## 추적자
+- 템플릿이 빌드에 성공한 다음에도 올바르게 동작하는지 확인해야 한다.
+- 추적자( tracer )는 검사할 템플릿의 인자로 사용될 수 있는 사용자 정의 클래스로 개발 초기에 템플릿 정의에서 문제를 검출함으로써 디버깅 문제를 완화한다.
+- 많은 경우 추적자는 템플릿의 요구사항만을 만족하게 작성되나 **호출된 연산에 대한 추적을 생성하는데 중점**을 둔다. 이를 통해서 알고리즘의 효율성과 같은 것을 실험적으로 증명할 수 있고 연산의 과정도 증명할 수 있다.
+```
+// UTIP_08.hpp
+#ifndef _UTIP_08_HPP_
+#define _UTIP_08_HPP_
+
+#include <iostream>
+
+class SortTracer
+{
+private:
+	int value;					// 저장할 정수값
+	int generation;				// 추적자 생성
+	static long n_created;		// 생성자 호출 횟수
+	static long n_destoryed;	// 소멸자 호출 횟수
+	static long n_assigned;		// 할당 횟수
+	static long n_compared;		// 비교 횟수
+	static long n_max_live;		// 현재 존재하는 객체의 최대 수
+
+	// 현재 존재하는 객체의 최대 수 다시 계산
+	static void update_max_live( )
+	{
+		if ( n_created - n_destoryed > n_max_live )
+		{
+			n_max_live = n_created - n_destoryed;
+		}
+	}
+
+public:
+	static long SortTracer::creations( )
+	{
+		return n_created;
+	}
+
+	static long SortTracer::destructions( )
+	{
+		return n_destoryed;
+	}
+
+	static long SortTracer::assignments( )
+	{
+		return n_assigned;
+	}
+
+	static long SortTracer::comparisions( )
+	{
+		return n_compared;
+	}
+
+	static long SortTracer::max_live( )
+	{
+		return n_max_live;
+	}
+
+	// 생성자
+	SortTracer( int v = 0 ) : value( v ), generation( 1 )
+	{
+		++n_created;
+		update_max_live( );
+		std::cerr << "SortTracer #" << n_created << ", created generation " << generation << " (total: " << n_created - n_destoryed << ")\n";
+	}
+
+	// 복사 생성자
+	SortTracer( const SortTracer& b ) : value( b.value ), generation( b.generation )
+	{
+		++n_created;
+		update_max_live( );
+		std::cerr << "SortTracer #" << n_created << ", copied as generation " << generation << " (total: " << n_created - n_destoryed << ")\n";
+	}
+
+	// 소멸자
+	~SortTracer( )
+	{
+		++n_destoryed;
+		update_max_live( );
+		std::cerr << "SortTracer gneration" << generation << " destroyed (total: " << n_created - n_destoryed << ")\n";
+	}
+
+	// 할당
+	SortTracer& operator=( const SortTracer& b )
+	{
+		++n_assigned;
+		std::cerr << "SortTracer assignment#" << n_created << "(generation " << generation << " = " << b.generation << ")\n";
+		value = b.value;
+		return *this;
+	}
+
+	int val( ) const
+	{
+		return value;
+	}
+
+	// 비교
+	friend bool operator< ( const SortTracer& a, const SortTracer& b )
+	{
+		++n_compared;
+		std::cerr << "SortTracer comparision #" << n_compared << " (generation " << a.generation << " < " << b.generation << ")\n";
+		return a.value < b.value;
+	}
+};
+
+#endif
+
+// UTIP_08.cpp
+#include "UTIP_08.hpp"
+
+long SortTracer::n_created = 0;
+long SortTracer::n_destoryed = 0;
+long SortTracer::n_assigned = 0;
+long SortTracer::n_compared = 0;
+long SortTracer::n_max_live = 0;
+```
+- 이 추적자를 통해서 주어진 템플릿에서 수행된 할당과 비교 연산뿐만이 아니라 실제 생성과 소멸의 형태도 추적할 수 있다.
+```c++
+// UTIP_08_MAIN.cpp
+#include <iostream>
+#include <algorithm>
+#include "UTIP_08.hpp"
+
+int main( )
+{
+	// 예제 입력 준비
+	SortTracer input[] = { 7, 3, 5, 6, 4, 2, 0, 1, 9, 8 };
+
+	// 초기값 출력
+	for ( int i = 0; i < 10; ++i )
+	{
+		std::cerr << input[i].val( ) << ' ';
+	}
+	std::cerr << std::endl;
+
+	// 초기 조건을 기억
+	long created_at_start = SortTracer::creations( );
+	long max_live_at_start = SortTracer::max_live( );
+	long assigned_at_start = SortTracer::assignments( );
+	long compared_at_start = SortTracer::comparisions( );
+
+	// 알고리즘 수행
+	std::cerr << "---[ Start std::sort() ]---------------------------------\n";
+	std::sort<>( &input[0], &input[9] + 1 );
+	std::cerr << "---[ End std::sort() ]-----------------------------------\n";
+
+	// 결과 검증
+	for ( int i = 0; i < 10; ++i )
+	{
+		std::cerr << input[i].val( ) << ' ';
+	}
+	std::cerr << "\n\n";
+
+	// 마지막 보고
+	std::cerr << "std::sort of 10 SortTracers"
+		<< " was performed by:\n"
+		<< SortTracer::creations( ) - created_at_start
+		<< " temporary tracers\n"
+		<< "up to "
+		<< SortTracer::max_live( )
+		<< " tracers at th same tiem ("
+		<< max_live_at_start << " before)\n"
+		<< SortTracer::assignments( ) - assigned_at_start
+		<< " assignments\n"
+		<< SortTracer::comparisions( ) - compared_at_start
+		<< " comparisions\n\n";
+}
+```
+- 이 프로그램을 실행시키면 많은 양의 출력이 생성되지만 중요한 내용 대부분은 마지막 보고에 담겨있다.
+```
+std::sort of 10 SortTracers was performed by:
+9 temporary tracers                             // 9 개의 임시 추적자가 생성되었다.
+up to 11 tracers at th same tiem (10 before)    // 동시에 생성된 추적자는 하나뿐이다.
+33 assignments                                  // 33 번의 할당이 이루어졌다.
+42 comparisions                                 // 42번의 비교가 이루어졌다.
+```
+- 이 추적자는 표준 sort() 알고리즘이 추적자가 가진 기능보다 많은 것을 요구하지 않는다.
+> 연산자 == 는 정의하지 않았다.
+
+## 원형
+- 추적자는 추적할 템플릿의 요구사항을 최소한만 만족시키는 인터페이스를 제공한다.
+- 이와 같은 추적자가 실시간 출력을 생성하지 않는다면 이 추적자는 원형(archetype)이라고 불린다.
+- 원형을 사용하면 템플릿 구현이 의도한 문법적 제약 조건 이외의 것을 요구하지는 않는지 검증할 수 있다.
