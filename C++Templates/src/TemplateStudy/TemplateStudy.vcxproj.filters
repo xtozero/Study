@@ -420,6 +420,33 @@
     <ClCompile Include="09_Fundamentals in Depth\FID_02.cpp">
       <Filter>09_Fundamentals in Depth</Filter>
     </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_03.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_04.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_05.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_06.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_07.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_08.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_09.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_10.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_11.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
