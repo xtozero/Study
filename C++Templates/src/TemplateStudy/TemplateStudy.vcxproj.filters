@@ -447,6 +447,15 @@
     <ClCompile Include="09_Fundamentals in Depth\FID_11.cpp">
       <Filter>09_Fundamentals in Depth</Filter>
     </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_12.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_13.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="09_Fundamentals in Depth\FID_14.cpp">
+      <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">

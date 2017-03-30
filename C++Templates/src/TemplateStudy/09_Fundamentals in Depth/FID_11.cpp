@@ -51,7 +51,7 @@ class Derived : public Base
 
 C<Base*, &derived_obj> err1; // error 부모 클래스로의 변환은 고려되지 않는다.
 
-C<int&, base.i> err2; // error 클래스 변수의 멤버변수는 변수로 간주되지 않음.
+C<int&, base.i> err2; // error 클래스 변수의 멤버 변수는 변수로 간주되지 않음.
 
 int a[10];
 C<int*, &a[0]> err3; // error 배열 내 개별 주소 역시 마찬가지

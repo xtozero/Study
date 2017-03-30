@@ -28,7 +28,7 @@ template <template <typename X> union C> // error
 void f( C<int>* p );
 */
 
-template <template <typename T, T*> class Buf>
+template <template <typename T, T*> class Buf> // ok 파라미터화 구문애서는 사용 가능
 class Edge
 {
 	//...
