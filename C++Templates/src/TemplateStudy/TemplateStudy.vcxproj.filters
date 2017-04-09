@@ -76,6 +76,9 @@
     <Filter Include="09_Fundamentals in Depth">
       <UniqueIdentifier>{8f6cbc60-ee19-4473-b8f3-6172a77c4cfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="10_Name in Templates">
+      <UniqueIdentifier>{70dc6536-1589-41ba-8a7b-9f7402a364c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -455,6 +458,51 @@
     </ClCompile>
     <ClCompile Include="09_Fundamentals in Depth\FID_14.cpp">
       <Filter>09_Fundamentals in Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_01.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_02.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_03.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_04.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_05.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_06.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_07.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_08.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_09.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_10.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_11.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_12.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_13.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_14.cpp">
+      <Filter>10_Name in Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="10_Name in Templates\NIT_15.cpp">
+      <Filter>10_Name in Templates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
