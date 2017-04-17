@@ -10,7 +10,7 @@ class Calcurator
 	*/
 
 	friend void print(); // ok 프렌드 함수는 선언이 가능하다.
-	friend void print( ) // ok 프렌드 함수는 정의도 가능하다. 이경우 이 함수는 전역 함수이다.
+	friend void print( ) // ok 프렌드 함수는 정의도 가능하다. 이경우 이 함수는 일반 함수이다.
 	{
 
 	}

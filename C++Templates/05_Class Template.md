@@ -53,7 +53,7 @@ public:
     ...
 };
 ```
-- Stack 클래스의 데이터형은 Stack<>이고 T는 템플릿 파라미터이다. 따라서 선언 내에서 Stack 클래스의 데이터형을 써야 한다면 Stack<T>로 표기해야 한다.
+- Stack 클래스의 데이터형은 Stack\<\>이고 T는 템플릿 파라미터이다. 따라서 선언 내에서 Stack 클래스의 데이터형을 써야 한다면 Stack\<T\>로 표기해야 한다.
 ```c++
 // CT_01.cpp
 template <typename T>
