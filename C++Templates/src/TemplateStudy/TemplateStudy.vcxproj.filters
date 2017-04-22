@@ -79,6 +79,15 @@
     <Filter Include="10_Name in Templates">
       <UniqueIdentifier>{70dc6536-1589-41ba-8a7b-9f7402a364c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="11_Instantiation">
+      <UniqueIdentifier>{48e6c1eb-cd90-45b8-878e-9907e4fd4013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11_Instantiation\INS_07">
+      <UniqueIdentifier>{da37be69-d963-4787-8f1a-f6e81c60cda3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11_Instantiation\INS_08">
+      <UniqueIdentifier>{d483ff18-5cd5-4077-b013-4b07b66cc6f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -504,6 +513,36 @@
     <ClCompile Include="10_Name in Templates\NIT_15.cpp">
       <Filter>10_Name in Templates</Filter>
     </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_01.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_02.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_03.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_04.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_05.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_06.cpp">
+      <Filter>11_Instantiation</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_07_TR1.cpp">
+      <Filter>11_Instantiation\INS_07</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_07.cpp">
+      <Filter>11_Instantiation\INS_07</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_08_TR1.cpp">
+      <Filter>11_Instantiation\INS_08</Filter>
+    </ClCompile>
+    <ClCompile Include="11_Instantiation\INS_08.cpp">
+      <Filter>11_Instantiation\INS_08</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -553,6 +592,9 @@
     </ClInclude>
     <ClInclude Include="08_Using Template in Practice\UTIP_08.hpp">
       <Filter>08_Using Template in Practice\UTIP_08</Filter>
+    </ClInclude>
+    <ClInclude Include="11_Instantiation\INS_07_TR1.h">
+      <Filter>11_Instantiation\INS_07</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
