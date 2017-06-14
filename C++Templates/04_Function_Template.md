@@ -134,7 +134,7 @@ f(expr) // 어떤 표현식으로 f를 호출
 
 		1\. expr이 lvalue이면 T와 ParamType 모두 왼 값 참조로 추론된다. <br>
 		
-		2\. expr이 rvalue이면 1의 규칙이 적용된다.
+		2\. expr이 rvalue이면 reference를 무시하고 pattern-matching 방식으로 대응시켜 T를 결정한다.
 	
 		```c++
 		// FT_05.cpp

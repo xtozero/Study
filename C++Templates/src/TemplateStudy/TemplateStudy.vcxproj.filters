@@ -88,6 +88,9 @@
     <Filter Include="11_Instantiation\INS_08">
       <UniqueIdentifier>{d483ff18-5cd5-4077-b013-4b07b66cc6f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="12_Template Argument Deduction">
+      <UniqueIdentifier>{46ffdf32-22c4-4fe9-b63a-a62a11a07e0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -542,6 +545,27 @@
     </ClCompile>
     <ClCompile Include="11_Instantiation\INS_08.cpp">
       <Filter>11_Instantiation\INS_08</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_01.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_02.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_03.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_04.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_05.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_06.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
+    </ClCompile>
+    <ClCompile Include="12_Template Argument Deduction\TAD_07.cpp">
+      <Filter>12_Template Argument Deduction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
