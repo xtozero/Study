@@ -91,6 +91,18 @@
     <Filter Include="12_Template Argument Deduction">
       <UniqueIdentifier>{46ffdf32-22c4-4fe9-b63a-a62a11a07e0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="13_Specialization and Overloading">
+      <UniqueIdentifier>{606e0642-12dc-41f7-9594-6e003049b18e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13_Specialization and Overloading\SAO_11">
+      <UniqueIdentifier>{0a978f7a-2c3e-4288-9a4b-c175279c7ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13_Specialization and Overloading\SAO_06">
+      <UniqueIdentifier>{5f76391e-58f6-4bb3-9d25-d4213b1df9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13_Specialization and Overloading\SAO_13">
+      <UniqueIdentifier>{3891cb9c-4f41-49e2-9cc2-dca952e620ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -567,6 +579,63 @@
     <ClCompile Include="12_Template Argument Deduction\TAD_07.cpp">
       <Filter>12_Template Argument Deduction</Filter>
     </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_01.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_02.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_03.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_04.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_05.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_06_TR1.cpp">
+      <Filter>13_Specialization and Overloading\SAO_06</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_06_TR2.cpp">
+      <Filter>13_Specialization and Overloading\SAO_06</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_07.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_08.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_09.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_10.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_11_TR1.cpp">
+      <Filter>13_Specialization and Overloading\SAO_11</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_11_TR2.cpp">
+      <Filter>13_Specialization and Overloading\SAO_11</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_12.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_13.cpp">
+      <Filter>13_Specialization and Overloading\SAO_13</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_14.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_15.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_16.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="13_Specialization and Overloading\SAO_17.cpp">
+      <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -619,6 +688,9 @@
     </ClInclude>
     <ClInclude Include="11_Instantiation\INS_07_TR1.h">
       <Filter>11_Instantiation\INS_07</Filter>
+    </ClInclude>
+    <ClInclude Include="13_Specialization and Overloading\SAO_13.hpp">
+      <Filter>13_Specialization and Overloading\SAO_13</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

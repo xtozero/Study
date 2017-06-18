@@ -373,7 +373,7 @@ const T& min( const T& first, const T& second, const T& third )
 {
 	cout << "min( T, T, T )" << endl;
 	return min( min( first, second ), third ); // int를 위해서라도 템플릿 버전이 사용될 수 있다.
-											   // 비 템플릿 함수 선언이 너무 늦게 나왔기 떄문
+											   // 비 템플릿 함수 선언이 너무 늦게 나왔기 때문
 }
 
 const int& min( const int& lhs, const int& rhs )
