@@ -103,6 +103,9 @@
     <Filter Include="13_Specialization and Overloading\SAO_13">
       <UniqueIdentifier>{3891cb9c-4f41-49e2-9cc2-dca952e620ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="14_Future_Directions">
+      <UniqueIdentifier>{57af2e3e-2eb8-4458-a184-f817691e8834}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -635,6 +638,48 @@
     </ClCompile>
     <ClCompile Include="13_Specialization and Overloading\SAO_17.cpp">
       <Filter>13_Specialization and Overloading</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_01.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_02.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_03.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_04.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_05.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_06.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_07.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_08.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_09.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_10.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_11.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_12.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_14.cpp">
+      <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="14_Future_Directions\FD_13.cpp">
+      <Filter>14_Future_Directions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

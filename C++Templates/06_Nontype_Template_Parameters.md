@@ -164,7 +164,6 @@ IntegralArithmetic<int, cn> constInt;
 
 > 정적 지속성( static storage duration )은 프로그램이 시작될 때 자동으로 할당되어 프로그램이 끝나면 자동으로 해제되는 생명주기를 같는 객체를 뜻한다. ex) 전역 변수, static 변수
 
-
 ```c++
 // NTP_04.cpp
 template <char* P>
