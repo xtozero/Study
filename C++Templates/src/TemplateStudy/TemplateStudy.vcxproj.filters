@@ -106,6 +106,9 @@
     <Filter Include="14_Future_Directions">
       <UniqueIdentifier>{57af2e3e-2eb8-4458-a184-f817691e8834}</UniqueIdentifier>
     </Filter>
+    <Filter Include="15_The_Polymorphic_Power_of_Templates">
+      <UniqueIdentifier>{27f7501b-bb89-4ea4-a7bb-32c810c408a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -680,6 +683,18 @@
     </ClCompile>
     <ClCompile Include="14_Future_Directions\FD_13.cpp">
       <Filter>14_Future_Directions</Filter>
+    </ClCompile>
+    <ClCompile Include="15_The_Polymorphic_Power_of_Templates\TPPT_01.cpp">
+      <Filter>15_The_Polymorphic_Power_of_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="15_The_Polymorphic_Power_of_Templates\TPPT_02.cpp">
+      <Filter>15_The_Polymorphic_Power_of_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="15_The_Polymorphic_Power_of_Templates\TPPT_03.cpp">
+      <Filter>15_The_Polymorphic_Power_of_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="15_The_Polymorphic_Power_of_Templates\TPPT_04.cpp">
+      <Filter>15_The_Polymorphic_Power_of_Templates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
