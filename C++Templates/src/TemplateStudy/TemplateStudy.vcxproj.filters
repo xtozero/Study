@@ -109,6 +109,9 @@
     <Filter Include="15_The_Polymorphic_Power_of_Templates">
       <UniqueIdentifier>{27f7501b-bb89-4ea4-a7bb-32c810c408a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="16_Traits_and_Policy_Classes">
+      <UniqueIdentifier>{2118b6e0-1297-4626-afa0-104c52259818}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -695,6 +698,54 @@
     </ClCompile>
     <ClCompile Include="15_The_Polymorphic_Power_of_Templates\TPPT_04.cpp">
       <Filter>15_The_Polymorphic_Power_of_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_01.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_02.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_03.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_04.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_05.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_06.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_07.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_08.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_09.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_10.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_11.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_12.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_13.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_14.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_15.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_16.cpp">
+      <Filter>16_Traits_and_Policy_Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
