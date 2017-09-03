@@ -112,6 +112,9 @@
     <Filter Include="16_Traits_and_Policy_Classes">
       <UniqueIdentifier>{2118b6e0-1297-4626-afa0-104c52259818}</UniqueIdentifier>
     </Filter>
+    <Filter Include="17_Templates_and_Inheritance">
+      <UniqueIdentifier>{73cfb8eb-6226-47a3-afc1-fa5c2e74da93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -746,6 +749,21 @@
     </ClCompile>
     <ClCompile Include="16_Traits_and_Policy_Classes\TAPC_16.cpp">
       <Filter>16_Traits_and_Policy_Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="17_Templates_and_Inheritance\TAI_01.cpp">
+      <Filter>17_Templates_and_Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="17_Templates_and_Inheritance\TAI_02.cpp">
+      <Filter>17_Templates_and_Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="17_Templates_and_Inheritance\TAI_03.cpp">
+      <Filter>17_Templates_and_Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="17_Templates_and_Inheritance\TAI_04.cpp">
+      <Filter>17_Templates_and_Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="17_Templates_and_Inheritance\TAI_05.cpp">
+      <Filter>17_Templates_and_Inheritance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
