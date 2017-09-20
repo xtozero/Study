@@ -115,6 +115,9 @@
     <Filter Include="17_Templates_and_Inheritance">
       <UniqueIdentifier>{73cfb8eb-6226-47a3-afc1-fa5c2e74da93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="18_Metaprograms">
+      <UniqueIdentifier>{b6cb97fb-3a43-42b2-adc4-3587d73cddb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -764,6 +767,30 @@
     </ClCompile>
     <ClCompile Include="17_Templates_and_Inheritance\TAI_05.cpp">
       <Filter>17_Templates_and_Inheritance</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_01.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_02.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_03.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_04.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_05.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_06.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_07.cpp">
+      <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="18_Metaprograms\META_08.cpp">
+      <Filter>18_Metaprograms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
