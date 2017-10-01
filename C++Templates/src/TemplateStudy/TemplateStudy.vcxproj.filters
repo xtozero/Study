@@ -118,6 +118,9 @@
     <Filter Include="18_Metaprograms">
       <UniqueIdentifier>{b6cb97fb-3a43-42b2-adc4-3587d73cddb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="19_Expression_Templates">
+      <UniqueIdentifier>{a3689ba9-ceb5-405c-9db4-d5a77989d366}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -791,6 +794,21 @@
     </ClCompile>
     <ClCompile Include="18_Metaprograms\META_08.cpp">
       <Filter>18_Metaprograms</Filter>
+    </ClCompile>
+    <ClCompile Include="19_Expression_Templates\ET_02.cpp">
+      <Filter>19_Expression_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="19_Expression_Templates\ET_01.cpp">
+      <Filter>19_Expression_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="19_Expression_Templates\ET_04.cpp">
+      <Filter>19_Expression_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="19_Expression_Templates\ET_03.cpp">
+      <Filter>19_Expression_Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="19_Expression_Templates\ET_05.cpp">
+      <Filter>19_Expression_Templates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
