@@ -121,6 +121,9 @@
     <Filter Include="19_Expression_Templates">
       <UniqueIdentifier>{a3689ba9-ceb5-405c-9db4-d5a77989d366}</UniqueIdentifier>
     </Filter>
+    <Filter Include="20_Type_Classification">
+      <UniqueIdentifier>{77f4faf2-0050-4f98-b6c4-ce151383bfd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -810,6 +813,21 @@
     <ClCompile Include="19_Expression_Templates\ET_05.cpp">
       <Filter>19_Expression_Templates</Filter>
     </ClCompile>
+    <ClCompile Include="20_Type_Classification\TC_01.cpp">
+      <Filter>20_Type_Classification</Filter>
+    </ClCompile>
+    <ClCompile Include="20_Type_Classification\TC_02.cpp">
+      <Filter>20_Type_Classification</Filter>
+    </ClCompile>
+    <ClCompile Include="20_Type_Classification\TC_03.cpp">
+      <Filter>20_Type_Classification</Filter>
+    </ClCompile>
+    <ClCompile Include="20_Type_Classification\TC_04.cpp">
+      <Filter>20_Type_Classification</Filter>
+    </ClCompile>
+    <ClCompile Include="20_Type_Classification\TC_05.cpp">
+      <Filter>20_Type_Classification</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -865,6 +883,21 @@
     </ClInclude>
     <ClInclude Include="13_Specialization and Overloading\SAO_13.hpp">
       <Filter>13_Specialization and Overloading\SAO_13</Filter>
+    </ClInclude>
+    <ClInclude Include="20_Type_Classification\Fundamental.h">
+      <Filter>20_Type_Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="20_Type_Classification\Compound.h">
+      <Filter>20_Type_Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="20_Type_Classification\Functional.h">
+      <Filter>20_Type_Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="20_Type_Classification\Class.h">
+      <Filter>20_Type_Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="20_Type_Classification\Enum.h">
+      <Filter>20_Type_Classification</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

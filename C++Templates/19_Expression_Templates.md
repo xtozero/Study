@@ -204,7 +204,7 @@ A_Add<A_Mult<A_Scalar<double>, Array<double>>, A_Mult<Array<double>, Array<doubl
 ```
 - 클래스 템플릿 A\_Scalar, A\_Add, A\_Mult를 사용해서 전치 표현 방식으로 표현식을 나타내었다.
 
-![](./img/19_01.png)
+	![](./img/19_01.png)
 
 ### 표현식 템플릿의 피연산자
 - 표현식에 대한 표현을 완성하기 위해서는 각 A\_Add와 A\_Mult 객체에 대한 인자의 참조자를 저장하고 A\_Scalar 객체에 저장될 스칼라 값을 기록해야 한다.
