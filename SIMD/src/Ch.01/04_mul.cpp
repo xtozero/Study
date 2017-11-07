@@ -1,10 +1,10 @@
-#include <iostream>
+ï»¿#include <iostream>
 
-//--------------
-// ÇÇ½Â¼ö´Â eax, ½Â¼ö´Â ´Ù¸¥ ¸Þ¸ð¸® È¤Àº ·¹Áö½ºÅÍ »ç¿ë. °á°ú´Â eax¿¡ ÀúÀå.
-// mul reg
-// mul mem
-//--------------
+/*--------------
+í”¼ìŠ¹ìˆ˜ëŠ” eax, ìŠ¹ìˆ˜ëŠ” ë‹¤ë¥¸ ë©”ëª¨ë¦¬ í˜¹ì€ ë ˆì§€ìŠ¤í„° ì‚¬ìš©. ê²°ê³¼ëŠ” eaxì— ì €ìž¥.
+mul reg
+mul mem
+--------------*/
 
 int main( )
 {

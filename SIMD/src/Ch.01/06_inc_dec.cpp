@@ -1,13 +1,13 @@
-#include <iostream>
+ο»Ώ#include <iostream>
 
-//--------------
-// Αυ°΅ Ώ¬»κΐΪ ++
-// inc reg
-// inc mem
-// °¨ΌÒ Ώ¬»κΐΪ --
-// dec reg
-// dec mem
-//--------------
+/*--------------
+μ¦κ°€ μ—°μ‚°μ ++
+inc reg
+inc mem
+κ°μ† μ—°μ‚°μ --
+dec reg
+dec mem
+--------------*/
 
 int main( )
 {

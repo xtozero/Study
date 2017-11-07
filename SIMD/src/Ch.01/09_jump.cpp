@@ -1,16 +1,16 @@
-#include <iostream>
+ï»¿#include <iostream>
 
-//--------------
-// jp È¤Àº jmp (jump)			¹«Á¶°Ç Á¡ÇÁ
-// je	(jump equal)			µÎ °ªÀÌ °°À¸¸é Á¡ÇÁ
-// jne	(jump not equal)		µÎ °ªÀÌ ´Ù¸£¸é Á¡ÇÁ
-// jz	(jump zero)				°ªÀÌ 0ÀÌ¸é Á¡ÇÁ
-// jnz	(jump not zero)			°ªÀÌ 0ÀÌ ¾Æ´Ï¸é Á¡ÇÁ
-// jg	(jump greater)			°ªÀÌ ´õ Å©¸é Á¡ÇÁ
-// jge	(jump greater equal)	°ªÀÌ Å©°Å³ª °°À¸¸é Á¡ÇÁ
-// jl	(jump less)				°ªÀÌ ´õ ÀÛÀ¸¸é Á¡ÇÁ
-// jle	(jump less equal)		°ªÀÌ ÀÛ°Å³ª °°À¸¸é Á¡ÇÁ
-//--------------
+/*--------------
+jp í˜¹ì€ jmp (jump)			ë¬´ì¡°ê±´ ì í”„
+je	(jump equal)			ë‘ ê°’ì´ ê°™ìœ¼ë©´ ì í”„
+jne	(jump not equal)		ë‘ ê°’ì´ ë‹¤ë¥´ë©´ ì í”„
+jz	(jump zero)				ê°’ì´ 0ì´ë©´ ì í”„
+jnz	(jump not zero)			ê°’ì´ 0ì´ ì•„ë‹ˆë©´ ì í”„
+jg	(jump greater)			ê°’ì´ ë” í¬ë©´ ì í”„
+jge	(jump greater equal)	ê°’ì´ í¬ê±°ë‚˜ ê°™ìœ¼ë©´ ì í”„
+jl	(jump less)				ê°’ì´ ë” ì‘ìœ¼ë©´ ì í”„
+jle	(jump less equal)		ê°’ì´ ì‘ê±°ë‚˜ ê°™ìœ¼ë©´ ì í”„
+--------------*/
 
 int main( )
 {
@@ -34,15 +34,15 @@ SIMDLOOP:
 
 	std::cout << "Result : " << nValue << std::endl;
 
-	// Do while°ú ºñ½ÁÇÑ ±¸Á¶·Î ÀÛ¼ºÇÏ´Â ¿¹Á¦
+	// Do whileê³¼ ë¹„ìŠ·í•œ êµ¬ì¡°ë¡œ ì‘ì„±í•˜ëŠ” ì˜ˆì œ
 	nValue = 1000;
 	__asm
 	{
 		pushad
 		mov eax, nValue
 WHILE:
-		// ¹İº¹ ¿¬»ê ÄÚµå ÀÛ¼º
-		dec eax			// eax-- => dec ¼öÇà½Ã eax °ªÀÌ 0ÀÌ µÇ´Â ¼ø°£ ZF°¡ 1·Î ¼¼ÆÃ
+		// ë°˜ë³µ ì—°ì‚° ì½”ë“œ ì‘ì„±
+		dec eax			// eax-- => dec ìˆ˜í–‰ì‹œ eax ê°’ì´ 0ì´ ë˜ëŠ” ìˆœê°„ ZFê°€ 1ë¡œ ì„¸íŒ…
 		jnz WHILE	// if ( eax != 0 ) goto WHILE
 		mov nValue, eax
 		popad

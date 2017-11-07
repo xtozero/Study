@@ -1,10 +1,10 @@
-#include <iostream>
+ï»¿#include <iostream>
 
-//--------------
-// ÇÇÁ¦¼ö°¡ eax, ´Ù¸¥ ·¹Áö½ºÅÍ¿Í ¸Ş¸ğ¸® °ªÀ» Á¦¼ö·Î »ç¿ë. °á±£°ªÀÇ ¸ñÀº eax, ³ª¸ÓÁö´Â edx¿¡ µé¾î°¨.
-// div reg
-// div mem
-//--------------
+/*--------------
+í”¼ì œìˆ˜ê°€ eax, ë‹¤ë¥¸ ë ˆì§€ìŠ¤í„°ì™€ ë©”ëª¨ë¦¬ ê°’ì„ ì œìˆ˜ë¡œ ì‚¬ìš©. ê²°ê´ê°’ì˜ ëª©ì€ eax, ë‚˜ë¨¸ì§€ëŠ” edxì— ë“¤ì–´ê°.
+div reg
+div mem
+--------------*/
 
 int main( )
 {
@@ -16,7 +16,7 @@ int main( )
 	{
 		pushad
 		mov eax, 17
-		cdq				// 32bit¸¦ 64bit·Î È®Àå convert dobule word to quad word ÀÇ ¾àÀÚ
+		cdq				// 32bitë¥¼ 64bitë¡œ í™•ì¥ convert dobule word to quad word ì˜ ì•½ì
 		mov ebx, A
 		div ebx			// eax /= ebx
 		mov B, eax

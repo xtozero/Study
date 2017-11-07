@@ -1,13 +1,13 @@
-#include <iostream>
+ï»¿#include <iostream>
 
-//--------------
-// ¿ŞÂÊ ¹æÇâ shift
-// shl reg, imm8	imm8Àº intÇü »ó¼ö¸¦ ÀÇ¹Ì
-// shl m32, imm8
-// °¨¼Ò ¿¬»êÀÚ --
-// shr reg, imm8
-// shr m32, imm8
-//--------------
+/*--------------
+ì™¼ìª½ ë°©í–¥ shift
+shl reg, imm8	imm8ì€ intí˜• ìƒìˆ˜ë¥¼ ì˜ë¯¸
+shl m32, imm8
+ê°ì†Œ ì—°ì‚°ì --
+shr reg, imm8
+shr m32, imm8
+--------------*/
 
 int main( )
 {

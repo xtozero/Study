@@ -1,20 +1,20 @@
-#include <iostream>
+ï»¿#include <iostream>
 
-//--------------
-// ºñ±³ ±¸¹®Àº sub¿¬»êÀ» ±âº»À¸·Î ºñÆ® ÇÃ·¡±×¿¡ µÎ °ªÀÌ °°ÀºÁö, ´õ Å«Áö ÀÛÀºÁö¸¦ ±â·Ï
-// ºÎÈ£ ¾ø´Â Á¤¼öÀÇ °æ¿ì ZF(zero flag), CF(carry falg)
-// ¿ÞÂÊ °ªÀ» VL, ¿À¸¥ÂÊ °ªÀ» VRÀÌ¶ó ÇÏ¸é
-// µÎ °ªÀÌ °°À¸¸é ZF 1, CF 0 ( VL - VR = 0 )
-// VR ÀÌ ´õ Å¬°æ¿ì ZF 0, CF 1 ( VL - VR < 0 )
-// VL ÀÌ ´õ Å¬°æ¿ì ZF 0, CF 0
-// ºÎÈ£ ÀÖ´Â Á¤¼öÀÇ °æ¿ì ZF, SF(sign flag), OF(overflow flag)
-// µÎ °ªÀÌ °°À¸¸é ZF 0
-// VL - VR °á°ú°¡ À½¼öÀÎ °æ¿ì SF 1 => VL ÀÌ ´õ Å¬°æ¿ì OF 1, VR ÀÌ ´õ Å¬°æ¿ì OF 0
-// VL - VR °á°ú°¡ ¾ç¼öÀÎ °æ¿ì SF 0 => VL ÀÌ ´õ Å¬°æ¿ì OF 0, VR ÀÌ ´õ Å¬°æ¿ì OF 1
-// cmp reg, reg
-// cmp reg, mem
-// cmp mem, reg
-//--------------
+/*--------------
+ë¹„êµ êµ¬ë¬¸ì€ subì—°ì‚°ì„ ê¸°ë³¸ìœ¼ë¡œ ë¹„íŠ¸ í”Œëž˜ê·¸ì— ë‘ ê°’ì´ ê°™ì€ì§€, ë” í°ì§€ ìž‘ì€ì§€ë¥¼ ê¸°ë¡
+ë¶€í˜¸ ì—†ëŠ” ì •ìˆ˜ì˜ ê²½ìš° ZF(zero flag), CF(carry falg)
+ì™¼ìª½ ê°’ì„ VL, ì˜¤ë¥¸ìª½ ê°’ì„ VRì´ë¼ í•˜ë©´
+ë‘ ê°’ì´ ê°™ìœ¼ë©´ ZF 1, CF 0 ( VL - VR = 0 )
+VR ì´ ë” í´ê²½ìš° ZF 0, CF 1 ( VL - VR < 0 )
+VL ì´ ë” í´ê²½ìš° ZF 0, CF 0
+ë¶€í˜¸ ìžˆëŠ” ì •ìˆ˜ì˜ ê²½ìš° ZF, SF(sign flag), OF(overflow flag)
+ë‘ ê°’ì´ ê°™ìœ¼ë©´ ZF 0
+VL - VR ê²°ê³¼ê°€ ìŒìˆ˜ì¸ ê²½ìš° SF 1 => VL ì´ ë” í´ê²½ìš° OF 1, VR ì´ ë” í´ê²½ìš° OF 0
+VL - VR ê²°ê³¼ê°€ ì–‘ìˆ˜ì¸ ê²½ìš° SF 0 => VL ì´ ë” í´ê²½ìš° OF 0, VR ì´ ë” í´ê²½ìš° OF 1
+cmp reg, reg
+cmp reg, mem
+cmp mem, reg
+--------------*/
 
 int main( )
 {

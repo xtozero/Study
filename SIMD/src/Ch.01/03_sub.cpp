@@ -1,12 +1,12 @@
 #include <iostream>
 
-//--------------
-// sub reg, reg
-// sub reg, mem
-// sub mem, reg
-// sub reg, imm
-// sub mem, imm
-//--------------
+/*--------------
+sub reg, reg
+sub reg, mem
+sub mem, reg
+sub reg, imm
+sub mem, imm
+--------------*/
 
 int main( )
 {
