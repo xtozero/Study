@@ -13,34 +13,118 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Ch.01">
+      <UniqueIdentifier>{f50066aa-b88d-423c-a89b-7ad226f83578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Ch.02">
+      <UniqueIdentifier>{7e9d4822-cee2-4513-a0af-1406f48e1680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util">
+      <UniqueIdentifier>{2822138e-d968-4139-babe-37af1314cf9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\02_add.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\03_sub.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\04_mul.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\05_div.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\06_inc_dec.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\07_shift.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\08_cmp.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.01\09_jump.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Ch.01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\01_mov.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\02_logical_ops.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\03_add.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\04_sub.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\05_GetSum.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Util\StopWatch.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\06_mul.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\07_max_min.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\08_GetMax.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\09_avg.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\10_cmp.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\11_bitmask.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\12_Count.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\13_extract_insert.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\14_Count_02.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\15_FindPosition.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\16_shift.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\17_FindPosition2.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\18_div.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\19_unpack.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\20_GetSum2.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\21_shufflecpp.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\22_casting.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\23_FadeInFadeOut.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\24_SharpenFilter.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
