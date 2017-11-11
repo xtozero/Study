@@ -124,6 +124,9 @@
     <Filter Include="20_Type_Classification">
       <UniqueIdentifier>{77f4faf2-0050-4f98-b6c4-ce151383bfd7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="21_Smart_Pointer">
+      <UniqueIdentifier>{114b6d85-c25c-4cb5-b439-342f7190d929}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -828,6 +831,18 @@
     <ClCompile Include="20_Type_Classification\TC_05.cpp">
       <Filter>20_Type_Classification</Filter>
     </ClCompile>
+    <ClCompile Include="21_Smart_Pointer\SP_01.cpp">
+      <Filter>21_Smart_Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="21_Smart_Pointer\SP_02.cpp">
+      <Filter>21_Smart_Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="21_Smart_Pointer\SP_03.cpp">
+      <Filter>21_Smart_Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="21_Smart_Pointer\SP_04.cpp">
+      <Filter>21_Smart_Pointer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -898,6 +913,12 @@
     </ClInclude>
     <ClInclude Include="20_Type_Classification\Enum.h">
       <Filter>20_Type_Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="21_Smart_Pointer\Holder.h">
+      <Filter>21_Smart_Pointer</Filter>
+    </ClInclude>
+    <ClInclude Include="21_Smart_Pointer\CounthingPtr.h">
+      <Filter>21_Smart_Pointer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
