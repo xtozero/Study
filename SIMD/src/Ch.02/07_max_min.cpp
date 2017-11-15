@@ -3,7 +3,7 @@
 /*--------------
 2개의 128bit XMM 레지스터 안에 있는 pack 값을 비교하여 최대값을 구한다.
 
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pmaxsb xmm1, xmm2/m128			signed char			8bit signed Byte 16개 계산
 pmaxsw xmm1, xmm2/m128			signed short		16bit signed short 8개 계산
 pmaxsd xmm1, xmm2/m128			signed integer		32it signed integer 4개 계산
@@ -12,7 +12,7 @@ pmaxuw xmm1, xmm2/m128			unsigned short		16bit unsigned short 8개 계산
 pmaxud xmm1, xmm2/m128			unsigend integer	32bit unsigned integer 4개 계산
 
 2개의 128bit XMM 레지스터 안에 있는 pack 값을 비교하여 최소값을 구한다.
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pminsb xmm1, xmm2/m128			signed char			8bit signed Byte 16개 계산
 pminsw xmm1, xmm2/m128			signed short		16bit signed short 8개 계산
 pminsd xmm1, xmm2/m128			signed integer		32it signed integer 4개 계산

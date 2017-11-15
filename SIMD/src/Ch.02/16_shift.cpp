@@ -6,29 +6,29 @@
 산술적 오른쪽 shift 연산 - 부호를 유지하고 2배수로 나눈 효과가 있다.
 
 논리적 왼쪽 shift 연산 ( Packed Shift Left Logical )
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 psllw xmm1, imm8				16bit short			16bit short형 정수 8개를 논리적 왼쪽 쉬프트한다.
 pslld xmm1, imm8				32bit integer		32bit integer형 정수 4개를 논리적 왼쪽 쉬프트한다.
 psllq xmm1, imm8				64bit __int64		64bit __int64 정수 2개를 논리적 왼쪽 쉬프트한다.
 
 논리적 오른쪽 shift 연산 ( Packed Shift Right Logical )
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 psrlw xmm1, imm8				16bit short			16bit short형 정수 8개를 논리적 오른쪽 쉬프트한다.
 psrld xmm1, imm8				32bit integer		32bit integer형 정수 4개를 논리적 오른쪽 쉬프트한다.
 psrlq xmm1, imm8				64bit __int64		64bit __int64 정수 2개를 논리적 오른쪽 쉬프트한다.
 
 산술적 오늘쪽 shift 연산 ( Packed Shift Right Arithmetic )
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 psraw xmm1, imm8				16bit short			16bit short형 정수 8개를 산술적 오른쪽 쉬프트한다.
 psrad xmm1, imm8				32bit integer		32bit integer형 정수 4개를 산술적 오른쪽 쉬프트한다.
 psraq xmm1, imm8				64bit __int64		64bit __int64 정수 2개를 산술적 오른쪽 쉬프트한다.
 
 XMM 레지스터 전체 왼쪽 shift
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pslldq xmm1, imm8				128bit double quad	왼쪽으로 1Byte씩 쉬프트한다.
 
 XMM 레지스터 전체 오른쪽 shift
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 psrldq xmm1, imm8				128bit double quad	오른쪽으로 1Byte씩 쉬프트한다.
 --------------*/
 

@@ -7,13 +7,13 @@
 pmullw, pmulld 함수는 결과 값을 절반의 하위 주소 공간의 값을 가져오고 상위 주소 공간의 값은 버리게 된다.
 만약 오버플로우가 나지 않는다면 pmullw, pmuld는 단순한 곱셈 연산과 같다고 생각하면 된다.
 
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pmullw xmm1, xmm2/m128			16bit short			16bit short형 정수 8개의 곱을 수행한다.
 pmulld xmm1, xmm2/m128			32bit interger		32bit integer형 정수 4개의 곱을 수행한다.
 
 절반의 상위 주소는 pmulhw, pmulhd를 이용해 얻을 수 있다.
 
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pmulhw xmm1, xmm2/m128			16bit short			16bit short형 정수 8개의 곱의 16bit 이상의 값
 pmulhd xmm1, xmm2/m128			32bit interger		32bit integer형 정수 4개의 곱의 32bit 이상의 값
 

@@ -18,7 +18,7 @@ CVTPD2DQ
 xmm0 |		4		|		3		|		2		|		1		|
 xmm1 |				2.0				|				1.0				|
 
-사용문법						pack size							연산 기능
+사용문법							pack size							연산 기능
 cvtdq2pd xmm1, xmm2/m64			32bit integer -> 64bit double		32bit integer형 정수 2개를 64bit double형 실수 2개로 변환
 cvtdq2ps xmm1, xmm2/m128		32bit integer -> 32bit float		32bit integer형 정수 4개를 32bit float형 실수 4개로 변환
 cvtpd2dq xmm1, xmm2/m128		64bit double -> 32bit integer		64bit double형 실수 2개를 32bit integer형 정수 2개로 변환
@@ -42,7 +42,7 @@ cvttps2pi mm, xmm/64			32bit float -> 32bit integer		32bit float형 실수 2개�
 cvttsd2si r32, xmm/m64			64bit double -> 32bit integer		64bit double형 실수 1개를 32bit integer형 정수 1개로 변환, 범용 레지스터에 대입, 버림 처리
 cvttss2si r32, xmm/m32			32bit float -> 32bit integer		32bit float형 실수 1개를 32bit integer형 정수 1개로 변환, 범용 레지스터에 대입, 버림 처리
 
-dq => Double Quard (=4 Doubleword integer)
+dq => Double Quard (= 4 Doubleword integer)
 pd => Packed Double-precision
 ps => Packed Single-precision
 pi => Packed Integer (= 2 Doubleword integer)

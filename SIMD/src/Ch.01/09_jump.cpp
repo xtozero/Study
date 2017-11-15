@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 
 /*--------------
-jp 혹은 jmp (jump)			무조건 점프
+jmp (jump)			무조건 점프
 je	(jump equal)			두 값이 같으면 점프
 jne	(jump not equal)		두 값이 다르면 점프
 jz	(jump zero)				값이 0이면 점프

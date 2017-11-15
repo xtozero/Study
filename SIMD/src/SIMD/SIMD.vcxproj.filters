@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\Util">
       <UniqueIdentifier>{2822138e-d968-4139-babe-37af1314cf9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.03">
+      <UniqueIdentifier>{cad9c5d4-fc97-472b-9cf8-d8fb52cc4c5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -114,9 +117,6 @@
     <ClCompile Include="..\Ch.02\20_GetSum2.cpp">
       <Filter>소스 파일\Ch.02</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.02\21_shufflecpp.cpp">
-      <Filter>소스 파일\Ch.02</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.02\22_casting.cpp">
       <Filter>소스 파일\Ch.02</Filter>
     </ClCompile>
@@ -125,6 +125,54 @@
     </ClCompile>
     <ClCompile Include="..\Ch.02\24_SharpenFilter.cpp">
       <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\01_mov.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\02_logical_ops.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\03_add.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\04_sub.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\05_matrix_add.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\06_mul.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\07_div.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\08_rcp.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\09_sqrt.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\11_hadd.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\10_rsqrt.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\12_ClosestDistance.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\13_shuffle.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\21_shuffle.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\14_matrix_multiply.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.03\15_memcpy.cpp">
+      <Filter>소스 파일\Ch.03</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

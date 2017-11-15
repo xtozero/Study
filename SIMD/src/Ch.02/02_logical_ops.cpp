@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 
 /*--------------
+128bit XMM 레지스터의 모든 값에 대해 bit 연산을 수행한다.
+
 PAND (Bitwise Logical And)
 pand xmm1, xmm2/m128
 POR (Bitwise Logical OR)

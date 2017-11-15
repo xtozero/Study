@@ -378,4 +378,9 @@ int main( )
 	memcpy_s( result.data( ), IMAGE_SIZE, pDest, IMAGE_SIZE );
 
 	result.save_image( "../Resource/SharpenFilter/SharpenBySIMD.bmp" );
+
+	delete[] pLenna;
+	delete[] pDest;
+
+	return 0;
 }

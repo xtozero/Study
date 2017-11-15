@@ -3,7 +3,7 @@
 /*--------------
 두 XMM 레지스터의 pack에 있는 값이 같은지를 비교한다. ( Packed Compare Equal )
 
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pcmpeqb xmm1, xmm2/m128			8bit byte			8bit byte형 정수 16개를 비교하여 값이 같으면 Pack의 모든 비트를 1로 세팅
 pcmpeqw xmm1, xmm2/m128			16bit short			16bit short형 정수 8개를 비교하여 값이 같으면 Pack의 모든 비트를 1로 세팅
 pcmpeqd xmm1, xmm2/m128			32bit integer		32bit int형 정수 4개를 비교하여 값이 같으면 Pack의 모든 비트를 1로 세팅
@@ -13,7 +13,7 @@ xmm1 2	3	4	5		6	7	8	9
 xmm0 0	0	0	ffff	0	0	0	0
 
 두 XMM 레지스터의 pack중 어느 것이 더 큰지를 비교한다. ( Packed Compare Greater Than )
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 pcmpgtb xmm1, xmm2/m128			8bit byte			8bit byte형 정수 16개를 비교하여 값이 크면 Pack의 모든 비트를 1로 세팅
 pcmpgtw xmm1, xmm2/m128			16bit short			16bit short형 정수 8개를 비교하여 값이 크면 Pack의 모든 비트를 1로 세팅
 pcmpgtd xmm1, xmm2/m128			32bit integer		32bit int형 정수 4개를 비교하여 값이 크면 Pack의 모든 비트를 1로 세팅

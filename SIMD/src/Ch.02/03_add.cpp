@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 
 /*--------------
-사용문법						pack size			연산 기능
+사용문법							pack size			연산 기능
 paddb xmm1, xmm2/m128			char				8bit Byte 형 정수 16개를 더한다.
 paddw xmm1, xmm2/m128			short				16bit Byte 형 정수 8개를 더한다.
 paadd xmm1, xmm2/m128			interger			32bit Byte 형 정수 4개를 더한다.
