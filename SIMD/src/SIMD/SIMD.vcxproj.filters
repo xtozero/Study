@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\Ch.03">
       <UniqueIdentifier>{cad9c5d4-fc97-472b-9cf8-d8fb52cc4c5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.04">
+      <UniqueIdentifier>{e52ed49a-c628-46ce-915a-4e560c3372ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -173,6 +176,72 @@
     </ClCompile>
     <ClCompile Include="..\Ch.03\15_memcpy.cpp">
       <Filter>소스 파일\Ch.03</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\01_overview.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\02_read_write.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\03_add.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\05_mul.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\04_sub.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\06_max_min.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\07_avg.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\08_other_arithmetic.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\09_GetSum.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\10_GetAbs.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\11_set.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\12_logical_ops.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\13_shift.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\14_div.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\15_cmp.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\16_Select.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\17_unpack.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\18_shuffle.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\19_extract_insert_bitmask.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\20_casting.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\21_SharpenFilter.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.04\22_EdgeDetect.cpp">
+      <Filter>소스 파일\Ch.04</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

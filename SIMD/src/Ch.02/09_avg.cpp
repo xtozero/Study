@@ -4,8 +4,8 @@
 두 XMM 레지스터에 각각의 pack안의 값을 평균하여 넣어준다.
 
 사용문법							pack size			연산 기능
-pavgb xmm1, xmm2/m128			8bit byte			8bit byte형 정수 16개를 가진 레지스터 2개의 평균값을 구한다.
-pavgw xmm1, xmm2/m128			16bit short			16bit short형 정수 8개를 가진 레지스터 2개의 평균값을 구한다.
+pavgb xmm1, xmm2/m128			8bit byte			8bit unsigned byte형 정수 16개를 가진 레지스터 2개의 평균값을 구한다.
+pavgw xmm1, xmm2/m128			16bit short			16bit unsigned short형 정수 8개를 가진 레지스터 2개의 평균값을 구한다.
 --------------*/
 
 int main( )

@@ -46,7 +46,8 @@ int main( )
 		popad
 	}
 
-	std::cout << "Equality Result : " << std::hex;
+	std::cout << std::hex;
+	std::cout << "Equality Result : ";
 	for ( short elem : MinResult )
 	{
 		std::cout << elem << ' ';
@@ -54,7 +55,7 @@ int main( )
 	std::cout << std::endl;
 
 
-	std::cout << "Greater than : " << std::hex;
+	std::cout << "Greater than : ";
 	for ( short elem : MaxResult )
 	{
 		std::cout << elem << ' ';

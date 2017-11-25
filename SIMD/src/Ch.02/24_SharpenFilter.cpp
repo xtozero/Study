@@ -173,7 +173,7 @@ void Convolution3x3SIMD( unsigned char* pSrc, unsigned char* pDest,
 
 		sub eax, edi			// [x][y-1] 위치
 		movdqa xmm5, Mask0
-		movdqu xmm0, [eax-3]	// [x-1][y-1] 위치
+		movdqu xmm0, [eax - 3]	// [x-1][y-1] 위치
 		movdqa xmm1, xmm0
 
 		punpcklbw xmm0, xmm4
@@ -201,7 +201,7 @@ void Convolution3x3SIMD( unsigned char* pSrc, unsigned char* pDest,
 
 		// 2번 위치
 		movdqa xmm5, Mask2
-		movdqu xmm0, [eax+3]	// [x+1][y-1] 위치
+		movdqu xmm0, [eax + 3]	// [x+1][y-1] 위치
 		movdqa xmm1, xmm0
 
 		punpcklbw xmm0, xmm4
