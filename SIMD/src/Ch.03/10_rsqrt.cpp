@@ -8,7 +8,7 @@ Reciprocals of Square Root
 
 사용문법						pack size				연산 기능
 rsqrtps xmm1, xmm2/m128		32bit float				32bit float형 실수 4개에 대한 제곱근의 역수 값을 구한다.
-rsqrtss xmm1, xmm2/m128		32bit float				32bit float형 실수 4개에 대한 제곱근의 역수 값을 구한다.
+rsqrtss xmm1, xmm2/m128		32bit float				32bit float형 실수 1개에 대한 제곱근의 역수 값을 구한다.
 --------------*/
 
 int main( )

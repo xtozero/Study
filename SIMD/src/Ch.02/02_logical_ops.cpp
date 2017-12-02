@@ -3,13 +3,13 @@
 /*--------------
 128bit XMM 레지스터의 모든 값에 대해 bit 연산을 수행한다.
 
-PAND (Bitwise Logical And)
+PAND (Bitwise Logical And) A & B
 pand xmm1, xmm2/m128
-POR (Bitwise Logical OR)
+POR (Bitwise Logical OR) A | B
 por xmm1, xmm2/m128
-PXOR (Bitwise Logical Exclusive OR)
+PXOR (Bitwise Logical Exclusive OR)	A ^ B
 pxor xmm2, xmm2/m128
-PANDN (Bitwise Logical And Not)
+PANDN (Bitwise Logical And Not)	~A & B
 pandn xmm1, xmm2/m128
 --------------*/
 

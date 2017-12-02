@@ -4,7 +4,7 @@
 왼쪽 방향 shift
 shl reg, imm8	imm8은 int형 상수를 의미
 shl m32, imm8
-감소 연산자 --
+오른쪽 방향 shift
 shr reg, imm8
 shr m32, imm8
 --------------*/

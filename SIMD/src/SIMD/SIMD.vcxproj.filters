@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\Ch.04">
       <UniqueIdentifier>{e52ed49a-c628-46ce-915a-4e560c3372ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.05">
+      <UniqueIdentifier>{d1f6d09c-a6f9-4c16-b603-351c5c3c599b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -242,6 +245,45 @@
     </ClCompile>
     <ClCompile Include="..\Ch.04\22_EdgeDetect.cpp">
       <Filter>소스 파일\Ch.04</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\01_overview.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\02_read_write.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\03_arithmatic.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\04_StanardDeviation.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\05_set.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\06_matrix_multiply.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\07_logical_ops.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\08_cmp.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\09_Select.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\10_casting.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\11_shuffle_unpack.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="12_cache.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="13_improve_matrix_multiply.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,13 +3,15 @@
 __m128i r = _mm_setzero_si128()
 
 16bit short 값 8개를 입력받아 128bit 값에 세트한다.
-__m128i r = _mm_set_epi16( short w7, short w6, short w5, short w4, short w3, short w2, short w1 )
+__m128i r = _mm_set_epi16( short w7, short w6, short w5, short w4, short w3, short w2, short w1, short w0 )
+|	w7	|	w6	|	w5	|	w4	|	w3	|	w2	|	w1	|	w0	|
 
 16bit short 값 1개를 입력받아 128bit 값에 세트한다.
 __m128i r = _mm_set1_epi16( short w )
 
 16bit short 값 8개를 입력받아 반대 순서로 128bit 값에 세트한다.
-__m128i r = _mm_setr_epi16( short w7, short w6, short w5, short w4, short w3, short w2, short w1 )
+__m128i r = _mm_setr_epi16( short w7, short w6, short w5, short w4, short w3, short w2, short w1, short w0 )
+|	w0	|	w1	|	w2	|	w3	|	w4	|	w5	|	w6	|	w7	|
 
 
 intrinsic			SIMD 연산자		Operation										

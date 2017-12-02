@@ -4,7 +4,7 @@ __m128i r = _mm_shuffle_epi32( __m128i a, int imm )
 intrinsic				SIMD 연산자		Operation
 _mm_shuffle_epi32		PSHUFD			선택 조합
 _mm_shufflehi_epi16		PSHUFHW			선택 조합
-_mm_shufllelo_epi16		PSHUFLW			선택 조합
+_mm_shufflelo_epi16		PSHUFLW			선택 조합
 --------------*/
 
 #include <emmintrin.h>
