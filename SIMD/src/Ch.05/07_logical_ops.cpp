@@ -7,7 +7,7 @@ __m128 r = _mm_xor_ps( __m128 a, __m128 b )
 
 __m128 r = _mm_andnot_ps( __m128 a, __m128 b )
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_and_ps			ANDPS			And 연산
 _mm_andnot_ps		ANDNPS			And Not 연산
 _mm_or_ps			ORPS			OR 연산

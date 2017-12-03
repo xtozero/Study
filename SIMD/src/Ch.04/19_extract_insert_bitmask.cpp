@@ -3,7 +3,7 @@ __m128i r = _mm_insert_epi16( __m128i a, int b, int imm )
 int r = _mm_extract_epi16( __m128i a, int imm )
 int r = _mm_movemask( _128i a )
 
-intrinsic				SIMD 연산자		Operation
+intrinsic 함수			SIMD 명령어		연산 방식
 _mm_extract_epi16		PEXTRW			pack에 있는 1개 값 가져오기
 _mm_insert_epi16		PINSRW			pack에 있는 1개 값 입력하기
 _mm_movemask			PMOVEMSKB		bitmask 생성

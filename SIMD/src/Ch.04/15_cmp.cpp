@@ -3,7 +3,7 @@ __m128i r = _mm_cmpeq_epi16( __m128i a, __m128i b )
 __m128i r = _mm_cmpgt_epi16( __m128i a, __m128i b )
 __m128i r = _mm_cmplt_epi16( __m128i a, __m128i b )
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_cmpeq_epi8		PCMPEQB			==
 _mm_cmpeq_epi16		PCMPEQW			==
 _mm_cmpeq_epi32		PCMPEQD			==

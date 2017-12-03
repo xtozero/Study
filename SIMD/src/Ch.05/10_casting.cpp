@@ -8,7 +8,7 @@ ps : 32bit float 형 pack
 pd : 64bit double 형 pack
 si32 : 32bit 정수형 스칼라
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_cvtss_si32		CVTSS2SI		32bit 정수 1개로 변환
 _mm_cvtss_si64		CVTSS2SI		64bit 정수 1개로 변환
 _mm_cvtps_pi32		CVTPS2PI		32bit 정수 2개로 변환

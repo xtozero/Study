@@ -11,7 +11,7 @@ __m128i r = _mm_xor_si128(  __m128i a, __m128i b )
 
 __m128i r = _mm_andnot_si128(  __m128i a, __m128i b )
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_and_si128		PAND			AND 연산
 _mm_andnot_si128	PANDN			AND NOT 연산
 _mm_or_si128		POR				OR 연산

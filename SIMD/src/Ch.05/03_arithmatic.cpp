@@ -11,7 +11,7 @@ __m128 r = _mm_max_ps( __m128 a, __m128 b )
 
 __m128 r = _mm_min_ps( __m128 a, __m128 b )
 
-intrinsic 함수		연산 방식			SIMD 명령어
+intrinsic 함수		SIMD 명령어			연산 방식
 _mm_add_ss			ADDSS				Scalar 덧셈
 _mm_add_ps			ADDPS				병렬 덧셈
 _mm_sub_ss			SUBSS				Scalar 뺄셈
@@ -49,7 +49,7 @@ int main( )
 	_mm_store_ps( R, xmmR );
 
 	std::cout << std::fixed;
-	std::cout << "Add : " << std::endl;
+	std::cout << "Add : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';
@@ -60,7 +60,7 @@ int main( )
 
 	_mm_store_ps( R, xmmR );
 
-	std::cout << "Sub : " << std::endl;
+	std::cout << "Sub : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';
@@ -71,7 +71,7 @@ int main( )
 
 	_mm_store_ps( R, xmmR );
 
-	std::cout << "Mul : " << std::endl;
+	std::cout << "Mul : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';
@@ -82,7 +82,7 @@ int main( )
 
 	_mm_store_ps( R, xmmR );
 
-	std::cout << "Div : " << std::endl;
+	std::cout << "Div : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';
@@ -93,7 +93,7 @@ int main( )
 
 	_mm_store_ps( R, xmmR );
 
-	std::cout << "Max : " << std::endl;
+	std::cout << "Max : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';
@@ -104,7 +104,7 @@ int main( )
 
 	_mm_store_ps( R, xmmR );
 
-	std::cout << "Min : " << std::endl;
+	std::cout << "Min : ";
 	for ( float elem : R )
 	{
 		std::cout << elem << ' ';

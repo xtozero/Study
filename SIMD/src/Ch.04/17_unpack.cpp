@@ -2,7 +2,7 @@
 __m128i r = _mm_unpackhi_epi32( __m128i a, __m128i b )
 __m128i r = _mm_unpacklo_epi32( __m128i a, __m128i b )
 
-intrinsic				SIMD 연산자		Operation
+intrinsic 함수			SIMD 명령어		연산 방식
 _mm_unpackhi_epi8		PUNPCKHBW		상위 8개 pack 조합			
 _mm_unpackhi_epi16		PUNPCKHWD		상위 4개 pack 조합	
 _mm_unpackhi_epi32		PUNPCKHDQ		상위 2개 pack 조합	
@@ -14,7 +14,7 @@ _mm_unpacklo_epi64		PUNPCKLQDQ		하위 1개 pack 조합
 
 __m128i r = _mm_packs_epi32( __m128i a, __m128i b )
 
-intrinsic				SIMD 연산자		Operation
+intrinsic 함수			SIMD 명령어		연산 방식
 _mm_packs_epi16			PACKSSWB		형 변환 조립
 _mm_packs_epi32			PACKSSDW		형 변환 조립
 _mm_packus_epi16		PACKUSWB		형 변환 조립

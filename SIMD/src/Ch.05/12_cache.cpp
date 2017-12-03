@@ -9,7 +9,7 @@ void _mm_stream_ps( float* p, __m128 a )
 void _mm_sfence(void)
 여러 프로세스가 하나의 메모리에 접근하여 사용하게 될 때 동기화를 보장해준다. _mm_prefetch 와 _mm_stream_ps 사용시 같이 사용해야 한다.
 
-intrinsic 함수		SIMD 명령어		연산기능
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_prefetch		PREFETCH		읽기
 _mm_stream_ps		MOVNTPS			쓰기
 _mm_sfence			SFENCE			쓰기 동기화

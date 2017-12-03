@@ -5,7 +5,7 @@ __m128 r = _mm_cmpgt_ps( __m128 a, __m128 b )
 
 __m128 r = _mm_cmplt_ps( __m128 a, __m128 b )
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_cmpeq_ss		CMPEQSS			==
 _mm_cmpeq_ps		CMPEQPS			==
 _mm_cmplt_ss		CMPLTSS			<

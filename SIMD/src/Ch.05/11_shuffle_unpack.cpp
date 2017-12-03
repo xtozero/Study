@@ -12,7 +12,7 @@ __m128 r = _mm_unpacklo_ps( __m128 a, __m128 b )
 
 __m128 r = _mm_unpackhi_ps( __m128 a, __m128 b )
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_shffle_ps		SHUFPS			32bit 실수형 4개를 조합한다.
 _mm_unpackhi_ps		UNPCKHPS		a와 b 상위 64bit 값을 교차 조합한다.
 _mm_unpacklo_ps		UNPCKLPS		a와 b 하위 64bit 값을 교차 조합한다.

@@ -1,20 +1,20 @@
 ﻿/*--------------
-_128m r = _mm_set_ps( float z, float y, float x, float w )
+_m128 r = _mm_set_ps( float z, float y, float x, float w )
 |	z	|	y	|	x	|	w	|
 
-_128m r = _mm_set1_ps( float w )
+_m128 r = _mm_set1_ps( float w )
 
 _m128 r = _mm_setzero_ps(void)
 
 _m128 r = _mm_setr_ps( float z, float y, float x, float w )
 |	w	|	x	|	y	|	z	|
 
-intrinsic			SIMD 연산자		Operation
+intrinsic 함수		SIMD 명령어		연산 방식
 _mm_set_ss			없음				하위 32bit 값을 입력하고, 나머지는 0으로 초기화
 _mm_set1_ps			없음				32bit 실수형 데이터 1개를 입력받아 4개로 대입
 _mm_set_ps			없음				32bit 실수형 데이터 4개를 입력받아 대입
 _mm_setr_ps			없음				32bit 실수형 데이터 4개를 입력받아 역순으로 대입
-_mm_setzero_ps		PXOR			모두 0으로 초기화
+_mm_setzero_ps		XORPS			모두 0으로 초기화
 --------------*/
 
 #include <emmintrin.h>

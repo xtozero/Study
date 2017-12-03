@@ -1,7 +1,7 @@
 ﻿/*--------------
 __m128i r = _mm_shuffle_epi32( __m128i a, int imm )
 
-intrinsic				SIMD 연산자		Operation
+intrinsic 함수			SIMD 명령어		연산 방식
 _mm_shuffle_epi32		PSHUFD			선택 조합
 _mm_shufflehi_epi16		PSHUFHW			선택 조합
 _mm_shufflelo_epi16		PSHUFLW			선택 조합

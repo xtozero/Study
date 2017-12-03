@@ -4,7 +4,7 @@
 __m128 r = _mm_load_ps( float* p )
 __m128 r = _mm_loadu_ps( float* p )
 
-intrinsic 함수		연산 방식			SIMD 명령어
+intrinsic 함수		SIMD 명령어			연산 방식
 _mm_loadh_pi		MOVHPS reg, mem		64bit 값을 상위 64bit 위치에 대입한다.
 _mm_loadl_pi		MOVLPS reg, mem		64bit 값을 하위 64bit 위치에 대입한다.
 _mm_load_ss			MOVSS				32bit 실수를 하위 32bit에 대입하고, 상위 96bit는 0으로 초기화 한다.
@@ -18,7 +18,7 @@ _mm_loadr_ps		MOVAPS + Shuffling	align 된 32bit 실수 4개를 읽어서 역순
 void _mm_store_ps( float* p, __m128 a )
 void _mm_store_ss( float* p, __m128 a )
 
-intrinsic 함수		연산 방식			SIMD 명령어
+intrinsic 함수		SIMD 명령어			연산 방식
 _mm_storeh_pi		MOVHPS reg, mem		상위 64bit 값을 저장한다.
 _mm_storel_pi		MOVLPS reg, mem		하위 64bit 값을 저장한다.
 _mm_store_ss		MOVSS				하위 32bit 값을 저장한다.

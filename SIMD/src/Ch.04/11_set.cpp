@@ -14,7 +14,7 @@ __m128i r = _mm_setr_epi16( short w7, short w6, short w5, short w4, short w3, sh
 |	w0	|	w1	|	w2	|	w3	|	w4	|	w5	|	w6	|	w7	|
 
 
-intrinsic			SIMD 연산자		Operation										
+intrinsic 함수		SIMD 명령어			연산 방식
 _mm_set_epi64		없음				64bit 정수 2개 입력
 _mm_set_epi32		없음				32bit 정수  4개 입력
 _mm_set_epi16		없음				16bit 정수 8개 입력

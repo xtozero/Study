@@ -2,7 +2,7 @@
 __m128i r = _mm_cvtepi32_ps( __m128i a )
 __m128i r = _mm_cvtps_epi32( __m128i a )
 
-intrinsic				SIMD 연산자		Operation
+intrinsic 함수			SIMD 명령어		연산 방식
 _mm_cvtsi64_sd			CVTSI2SD		64bit 정수와 __m128d 조합
 _mm_cvtsd_si64			CVTSD2SI		__m128d에서 하위 64bit 정수 변환
 _mm_cvttsd_si64			CVTTSD2SI		__m128d에서 하위 64bit인자를 버림에 의한 변환

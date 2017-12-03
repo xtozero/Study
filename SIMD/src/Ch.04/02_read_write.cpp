@@ -16,13 +16,13 @@ __m128i 데이터형에 있는 데이터를 byte, short, integer, __int64로 이
 void _mm_store_si128( __m128i *p, __m128 b )
 void _mm_storeu_si128( __m128i *p, __m128 b )
 
-intrinsic 함수			연산 방식			SIMD 명령어
-_mm_stream_si128		저장하기				MOVNTDQ
-_mm_stream_si32			저장하기				MOVNTI
-_mm_store_si128			저장하기				MOVDQU
-_mm_storeu_si128		저장하기				MOVDQA
-_mm_maskmoveu_si128		상태 저장			MASKMOVDQU
-_mm_storel_epi64		하위 64bit 저장		MOVQ
+intrinsic 함수			SIMD 명령어		연산 방식
+_mm_stream_si128		MOVNTDQ			저장하기				
+_mm_stream_si32			MOVNTI			저장하기				
+_mm_store_si128			MOVDQU			저장하기				
+_mm_storeu_si128		MOVDQA			저장하기				
+_mm_maskmoveu_si128		MASKMOVDQU		상태 저장			
+_mm_storel_epi64		MOVQ			하위 64bit 저장		
 --------------*/
 
 #include <emmintrin.h>
