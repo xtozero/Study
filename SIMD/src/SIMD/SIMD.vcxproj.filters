@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\Ch.06">
       <UniqueIdentifier>{f4651f49-44ba-4034-b74d-a4cf3a9ef034}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.07">
+      <UniqueIdentifier>{09f78e6f-5d7c-4422-9fd3-ed934d856b07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -309,11 +312,56 @@
     <ClCompile Include="..\Ch.06\07_casting.cpp">
       <Filter>소스 파일\Ch.06</Filter>
     </ClCompile>
-    <ClCompile Include="08_cache.cpp">
+    <ClCompile Include="..\Ch.06\08_cache.cpp">
       <Filter>소스 파일\Ch.06</Filter>
     </ClCompile>
-    <ClCompile Include="09_Factorial.cpp">
+    <ClCompile Include="..\Ch.06\09_Factorial.cpp">
       <Filter>소스 파일\Ch.06</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\01_overview.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\02_declaration.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\03_read_write.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\04_arithmetic.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\05_max_min.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\06_FindMaxValue.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\08_logical_ops.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\09_cmp.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\10_select.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\11_unpack.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\12_pack.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\13_SharpenFilter.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\14_debugging.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\15_clear_register.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.07\07_shift.cpp">
+      <Filter>소스 파일\Ch.07</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
