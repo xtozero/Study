@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\Ch.07">
       <UniqueIdentifier>{09f78e6f-5d7c-4422-9fd3-ed934d856b07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.08">
+      <UniqueIdentifier>{06b5b7d4-bc17-46a7-b76e-289275526751}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -362,6 +365,54 @@
     </ClCompile>
     <ClCompile Include="..\Ch.07\07_shift.cpp">
       <Filter>소스 파일\Ch.07</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\01_overview.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\02_declaration.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\03_read_write.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\04_arithmetic.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\05_GetSumFloat.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\06_math.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\07_max_min.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\08_StanardDeviation.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\09_logical_ops.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\10_cmp.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\11_select.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\12_cache.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\13_unpack.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\14_debugging.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\15_bitmask.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\16_matrix_multiply.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

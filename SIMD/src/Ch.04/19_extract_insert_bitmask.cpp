@@ -6,7 +6,7 @@ int r = _mm_movemask( _128i a )
 intrinsic 함수			SIMD 명령어		연산 방식
 _mm_extract_epi16		PEXTRW			pack에 있는 1개 값 가져오기
 _mm_insert_epi16		PINSRW			pack에 있는 1개 값 입력하기
-_mm_movemask			PMOVEMSKB		bitmask 생성
+_mm_movemask_epi8		PMOVMSKB		bitmask 생성
 --------------*/
 
 #include <emmintrin.h>
