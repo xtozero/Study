@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\Ch.08">
       <UniqueIdentifier>{06b5b7d4-bc17-46a7-b76e-289275526751}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.09">
+      <UniqueIdentifier>{10c50b73-b793-4c45-80b7-71c002c19d40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -413,6 +416,42 @@
     </ClCompile>
     <ClCompile Include="..\Ch.08\16_matrix_multiply.cpp">
       <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\01_overview.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\02_mov.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\03_logical_ops.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\04_arithmetic.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\05_cmp.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\06_select.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\07_math.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\08_hadd.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\09_casting.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\10_register_clear.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\11_insert128.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\12_byte2float.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
