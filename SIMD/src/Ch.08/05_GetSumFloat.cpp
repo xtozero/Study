@@ -75,6 +75,8 @@ int main( )
 		IntergerSum += i;
 	}
 
+	std::cout << "Integer Sum Result : " << IntergerSum << std::endl;
+
 	CStopWatch StopWatch;
 	StopWatch.Start( );
 	float SIMDResult = GetSumFloatVector( reinterpret_cast<F32vec4*>( FloatDataArray ), SIZE );

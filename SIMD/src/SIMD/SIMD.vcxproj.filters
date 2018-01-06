@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\Ch.09">
       <UniqueIdentifier>{10c50b73-b793-4c45-80b7-71c002c19d40}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Ch.10">
+      <UniqueIdentifier>{26de802f-dd4d-4107-81bf-32e909a8badf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Ch.01\01_mov.cpp">
@@ -452,6 +455,45 @@
     </ClCompile>
     <ClCompile Include="..\Ch.09\12_byte2float.cpp">
       <Filter>소스 파일\Ch.09</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\01_overview.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\02_read_write.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\03_logical_ops.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\04_arithmatic.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\05_GetSumFloat.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\06_max_min.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\07_math.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\08_set.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\09_extract.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\10_insert.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\11_cmp.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\12_casting.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\13_performance_test.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
