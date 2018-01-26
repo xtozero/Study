@@ -435,9 +435,6 @@
     <ClCompile Include="..\Ch.09\10_register_clear.cpp">
       <Filter>소스 파일\Ch.09</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.09\11_insert128.cpp">
-      <Filter>소스 파일\Ch.09</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.09\12_byte2float.cpp">
       <Filter>소스 파일\Ch.09</Filter>
     </ClCompile>
@@ -494,6 +491,9 @@
     </ClCompile>
     <ClCompile Include="..\Ch.10\04_arithmetic.cpp">
       <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.09\11_insert.cpp">
+      <Filter>소스 파일\Ch.09</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
