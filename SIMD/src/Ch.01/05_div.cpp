@@ -16,7 +16,7 @@ int main( )
 	{
 		pushad
 		mov eax, 17
-		cdq				// 32bit를 64bit로 확장 convert dobule word to quad word 의 약자
+		cdq				// 32bit를 64bit로 확장 convert double word to quad word 의 약자
 		mov ebx, A
 		div ebx			// eax /= ebx
 		mov B, eax

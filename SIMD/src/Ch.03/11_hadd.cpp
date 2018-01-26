@@ -1,17 +1,17 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 /*--------------
-2°³ÀÇ 128bit xmm·¹Áö½ºÅÍ¸¦ ÀÔ·Â¹Þ¾Æ ÁÂ¿ì¿¡ ÀÖ´Â °ªÀ» ´õÇÏ¿© °á°ú¸¦ ¾ò¾î¿Â´Ù.
-±âÁ¸¿¡ º´·Ä ¼öÁ÷ ¹æÇâÀ¸·Î ÇÕÀ» ±¸ÇÏ´ø °Í¿¡¼­ ¼öÆò¹æÇâÀ¸·Î ÇÕÀ» ±¸ÇÒ ¼ö ÀÖµµ·Ï ÇÏ´Â ¸í·É¾îÀÌ´Ù.
+2ê°œì˜ 128bit xmmë ˆì§€ìŠ¤í„°ë¥¼ ìž…ë ¥ë°›ì•„ ì¢Œìš°ì— ìžˆëŠ” ê°’ì„ ë”í•˜ì—¬ ê²°ê³¼ë¥¼ ì–»ì–´ì˜¨ë‹¤.
+ê¸°ì¡´ì— ë³‘ë ¬ ìˆ˜ì§ ë°©í–¥ìœ¼ë¡œ í•©ì„ êµ¬í•˜ë˜ ê²ƒì—ì„œ ìˆ˜í‰ë°©í–¥ìœ¼ë¡œ í•©ì„ êµ¬í•  ìˆ˜ ìžˆë„ë¡ í•˜ëŠ” ëª…ë ¹ì–´ì´ë‹¤.
 
-Ã¹ ¹øÂ° ·¹Áö½ºÅÍÀÇ 1,2 packÀ» ´õÇØ destÀÇ Ã¹ ¹øÂ° pack¿¡ ³Ö°í Ã¹ ¹øÂ° ·¹Áö½ºÅÍÀÇ 3, 4¹ø packÀ» ÇÕÃÄ¼­ destÀÇ 2¹øÂ° pack¿¡ ³Ö´Â´Ù.
-µÎ ¹øÂ° ·¹Áö½ºÅÍÀÇ 1,2 packÀ» ´õÇØ destÀÇ ¼¼ ¹øÂ° pack¿¡ ³Ö°í µÎ ¹øÂ° ·¹Áö½ºÅÍÀÇ 3, 4¹ø packÀ» ÇÕÃÄ¼­ destÀÇ 4¹øÂ° pack¿¡ ³Ö´Â´Ù.
+ì²« ë²ˆì§¸ ë ˆì§€ìŠ¤í„°ì˜ 1,2 packì„ ë”í•´ destì˜ ì²« ë²ˆì§¸ packì— ë„£ê³  ì²« ë²ˆì§¸ ë ˆì§€ìŠ¤í„°ì˜ 3, 4ë²ˆ packì„ í•©ì³ì„œ destì˜ 2ë²ˆì§¸ packì— ë„£ëŠ”ë‹¤.
+ë‘ ë²ˆì§¸ ë ˆì§€ìŠ¤í„°ì˜ 1,2 packì„ ë”í•´ destì˜ ì„¸ ë²ˆì§¸ packì— ë„£ê³  ë‘ ë²ˆì§¸ ë ˆì§€ìŠ¤í„°ì˜ 3, 4ë²ˆ packì„ í•©ì³ì„œ destì˜ 4ë²ˆì§¸ packì— ë„£ëŠ”ë‹¤.
 
 Packed Horizontal Add
 
-»ç¿ë¹®¹ý					pack size				¿¬»ê ±â´É
-haddps					32bit float				32bit floatÇü ½Ç¼ö 8°³¿¡ ´ëÇÑ ¼öÆò µ¡¼À °ªÀ» ±¸ÇÑ´Ù.
-haddpd					64bit double			64bit doubleÇü ½Ç¼ö 4°³¿¡ ´ëÇÑ ¼öÆò µ¡¼À °ªÀ» ±¸ÇÑ´Ù.
+ì‚¬ìš©ë¬¸ë²•					pack size				ì—°ì‚° ê¸°ëŠ¥
+haddps					32bit float				32bit floatí˜• ì‹¤ìˆ˜ 8ê°œì— ëŒ€í•œ ìˆ˜í‰ ë§ì…ˆ ê°’ì„ êµ¬í•œë‹¤.
+haddpd					64bit double			64bit doubleí˜• ì‹¤ìˆ˜ 4ê°œì— ëŒ€í•œ ìˆ˜í‰ ë§ì…ˆ ê°’ì„ êµ¬í•œë‹¤.
 --------------*/
 
 int main( )

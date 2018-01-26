@@ -3,7 +3,7 @@ AVX에서 기존의 Insert 함수에 insertf128이 추가되었다.
 insertf128은 __m256 데이터형의 원하는 위치에서 __m128 데이터를 넣는다.
 위치 지정은 함수의 2번째 인수에 0을 넣으면 하위 128bit, 1을 넣으면 상위 128bit 위치에 데이터를 넣는다.
 
-R = _mm256_extractf128_ps( A, 1 );
+R = _mm256_insertf128_ps( A, B, 1 );
 --------------*/
 
 #include "immintrin.h"

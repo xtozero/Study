@@ -26,10 +26,10 @@ _mm_cmpngt_ss		CMPNGTSS		!( a > b )
 _mm_cmpngt_ps		CMPNGTPS		!( a > b )
 _mm_cmpnge_ss		CMPNGESS		!( a >= b )
 _mm_cmpnge_ps		CMPNGEPS		!( a >= b )
-_mm_cmpord_ss		CMPORDSS		정렬
-_mm_cmpord_ps		CMPORDPS		정렬
-_mm_cmpunord_ss		CMPUNORDSS		역순 정렬
-_mm_cmpunord_ps		CMPUNORDPS		역순 정렬
+_mm_cmpord_ss		CMPORDSS		피연산자 중 하나가 NaN일 경우 조건 불성립
+_mm_cmpord_ps		CMPORDPS		피연산자 중 하나가 NaN일 경우 조건 불성립
+_mm_cmpunord_ss		CMPUNORDSS		피연산자 중 하나가 NaN일 경우 조건 성립
+_mm_cmpunord_ps		CMPUNORDPS		피연산자 중 하나가 NaN일 경우 조건 성립
 _mm_comieq_ss		COMISS			==
 _mm_comilt_ss		COMISS			<
 _mm_comile_ss		COMISS			<=

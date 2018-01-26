@@ -117,9 +117,6 @@
     <ClCompile Include="..\Ch.02\13_extract_insert.cpp">
       <Filter>소스 파일\Ch.02</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.02\14_Count_02.cpp">
-      <Filter>소스 파일\Ch.02</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.02\15_FindPosition.cpp">
       <Filter>소스 파일\Ch.02</Filter>
     </ClCompile>
@@ -267,12 +264,6 @@
     <ClCompile Include="..\Ch.05\02_read_write.cpp">
       <Filter>소스 파일\Ch.05</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.05\03_arithmatic.cpp">
-      <Filter>소스 파일\Ch.05</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Ch.05\04_StanardDeviation.cpp">
-      <Filter>소스 파일\Ch.05</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.05\05_set.cpp">
       <Filter>소스 파일\Ch.05</Filter>
     </ClCompile>
@@ -304,9 +295,6 @@
       <Filter>소스 파일\Ch.06</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.06\02_read_write.cpp">
-      <Filter>소스 파일\Ch.06</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Ch.06\03_arithmatic.cpp">
       <Filter>소스 파일\Ch.06</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.06\04_set.cpp">
@@ -393,9 +381,6 @@
     <ClCompile Include="..\Ch.08\07_max_min.cpp">
       <Filter>소스 파일\Ch.08</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.08\08_StanardDeviation.cpp">
-      <Filter>소스 파일\Ch.08</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.08\09_logical_ops.cpp">
       <Filter>소스 파일\Ch.08</Filter>
     </ClCompile>
@@ -465,9 +450,6 @@
     <ClCompile Include="..\Ch.10\03_logical_ops.cpp">
       <Filter>소스 파일\Ch.10</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ch.10\04_arithmatic.cpp">
-      <Filter>소스 파일\Ch.10</Filter>
-    </ClCompile>
     <ClCompile Include="..\Ch.10\05_GetSumFloat.cpp">
       <Filter>소스 파일\Ch.10</Filter>
     </ClCompile>
@@ -493,6 +475,24 @@
       <Filter>소스 파일\Ch.10</Filter>
     </ClCompile>
     <ClCompile Include="..\Ch.10\13_performance_test.cpp">
+      <Filter>소스 파일\Ch.10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.02\14_Count2.cpp">
+      <Filter>소스 파일\Ch.02</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.08\08_StandardDeviation.cpp">
+      <Filter>소스 파일\Ch.08</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\03_arithmetic.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.05\04_StandardDeviation.cpp">
+      <Filter>소스 파일\Ch.05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.06\03_arithmetic.cpp">
+      <Filter>소스 파일\Ch.06</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Ch.10\04_arithmetic.cpp">
       <Filter>소스 파일\Ch.10</Filter>
     </ClCompile>
   </ItemGroup>
