@@ -127,6 +127,12 @@
     <Filter Include="21_Smart_Pointer">
       <UniqueIdentifier>{114b6d85-c25c-4cb5-b439-342f7190d929}</UniqueIdentifier>
     </Filter>
+    <Filter Include="22_Tuple">
+      <UniqueIdentifier>{cffeff5a-6dc4-4c24-87b6-d2ee323fdebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="23_Typelist">
+      <UniqueIdentifier>{042fbd1f-3edc-4948-8239-0d7f2b580100}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -843,6 +849,24 @@
     <ClCompile Include="21_Smart_Pointer\SP_04.cpp">
       <Filter>21_Smart_Pointer</Filter>
     </ClCompile>
+    <ClCompile Include="22_Tuple\01_T.cpp">
+      <Filter>22_Tuple</Filter>
+    </ClCompile>
+    <ClCompile Include="22_Tuple\02_T.cpp">
+      <Filter>22_Tuple</Filter>
+    </ClCompile>
+    <ClCompile Include="22_Tuple\03_T.cpp">
+      <Filter>22_Tuple</Filter>
+    </ClCompile>
+    <ClCompile Include="23_Typelist\01_TL.cpp">
+      <Filter>23_Typelist</Filter>
+    </ClCompile>
+    <ClCompile Include="23_Typelist\02_TL.cpp">
+      <Filter>23_Typelist</Filter>
+    </ClCompile>
+    <ClCompile Include="23_Typelist\03_TL.cpp">
+      <Filter>23_Typelist</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -919,6 +943,33 @@
     </ClInclude>
     <ClInclude Include="21_Smart_Pointer\CounthingPtr.h">
       <Filter>21_Smart_Pointer</Filter>
+    </ClInclude>
+    <ClInclude Include="22_Tuple\Duo.h">
+      <Filter>22_Tuple</Filter>
+    </ClInclude>
+    <ClInclude Include="22_Tuple\Duo_Final.h">
+      <Filter>22_Tuple</Filter>
+    </ClInclude>
+    <ClInclude Include="22_Tuple\Tuple.h">
+      <Filter>22_Tuple</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\addconst.h">
+      <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\Typelist.h">
+      <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\ctvalue.h">
+      <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\valuelist.h">
+      <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\ctvalue17.h">
+      <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="23_Typelist\cons.h">
+      <Filter>23_Typelist</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
