@@ -20,7 +20,7 @@ int main( )
 
 	val<1>( t ) = true;
 	val<2>( t ) = 42;
-	val<3>( t ) = 0.2;
+	val<3>( t ) = 0.2f;
 
 	std::cout << val<1>(t) << std::endl;
 	std::cout << val<2>(t) << std::endl;

@@ -14,11 +14,11 @@ public:
 	using BaseT = Duo<P1, typename Tuple<P2, P3, P4, P5, NullT>::BaseT>;
 
 	Tuple( ) {}
-	Tuple( const typename std::reference_wrapper<P1>::type a1,
-			const typename std::reference_wrapper<P2>::type a2,
-			const typename std::reference_wrapper<P3>::type a3 = NullT( ),
-			const typename std::reference_wrapper<P4>::type a4 = NullT( ),
-			const typename std::reference_wrapper<P5>::type a5 = NullT( ) ) : BaseT( a1, Tuple<P2, P3, P4, P5, NullT>( a2, a3, a4, a5 ) ) {}
+	Tuple( typename add_const_lvalue_reference<P1>::type a1,
+			typename add_const_lvalue_reference<P2>::type a2,
+			typename add_const_lvalue_reference<P3>::type a3 = NullT( ),
+			typename add_const_lvalue_reference<P4>::type a4 = NullT( ),
+			typename add_const_lvalue_reference<P5>::type a5 = NullT( ) ) : BaseT( a1, Tuple<P2, P3, P4, P5, NullT>( a2, a3, a4, a5 ) ) {}
 };
 
 
@@ -30,11 +30,11 @@ public:
 	using BaseT = Duo<P1, P2>;
 
 	Tuple( ) {}
-	Tuple( const typename std::reference_wrapper<P1>::type a1,
-			const typename std::reference_wrapper<P2>::type a2,
-			const typename std::reference_wrapper<NullT>::type a3 = NullT( ),
-			const typename std::reference_wrapper<NullT>::type a4 = NullT( ),
-			const typename std::reference_wrapper<NullT>::type a5 = NullT( ) ) : BaseT(a1, a2) {}
+	Tuple( typename add_const_lvalue_reference<P1>::type a1,
+			typename add_const_lvalue_reference<P2>::type a2,
+			typename add_const_lvalue_reference<NullT>::type = NullT( ),
+			typename add_const_lvalue_reference<NullT>::type = NullT( ),
+			typename add_const_lvalue_reference<NullT>::type = NullT( ) ) : BaseT(a1, a2) {}
 };
 
 // 한 인자를 위한 편의 함수

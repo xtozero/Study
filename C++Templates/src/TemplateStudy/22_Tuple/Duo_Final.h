@@ -2,6 +2,20 @@
 
 #include <type_traits>
 
+template <typename T>
+class add_const_lvalue_reference
+{
+public:
+	using type = const T&;
+};
+
+template <>
+class add_const_lvalue_reference<void>
+{
+public:
+	using type = void;
+};
+
 template <typename T1, typename T2>
 class Duo
 {
@@ -238,12 +252,12 @@ template <int N, typename A, typename B, typename C>
 class DuoValue<N, Duo<A, Duo<B, C>>>
 {
 public:
-	static typename std::reference_wrapper<typename DuoT<N, Duo<A, Duo<B, C>>>::ResultT>::type& get( Duo<A, Duo<B, C>>& d )
+	static typename std::add_lvalue_reference<typename DuoT<N, Duo<A, Duo<B, C>>>::ResultT>::type get( Duo<A, Duo<B, C>>& d )
 	{
 		return DuoValue<N - 1, Duo<B, C>>::get( d.v2( ) );
 	}
 
-	static typename std::reference_wrapper<typename DuoT<N, Duo<A, Duo<B, C>>>::ResultT>::type get( const Duo<A, Duo<B, C>>& d )
+	static typename add_const_lvalue_reference<typename DuoT<N, Duo<A, Duo<B, C>>>::ResultT>::type get( const Duo<A, Duo<B, C>>& d )
 	{
 		return DuoValue<N - 1, Duo<B, C>>::get( d.v2( ) );
 	}
@@ -282,13 +296,13 @@ public:
 };
 
 template <int N, typename A, typename B>
-inline typename std::reference_wrapper<typename DuoT<N, Duo<A, B>>::ResultT>::type& val( Duo<A, B>& d )
+inline typename std::add_lvalue_reference<typename DuoT<N, Duo<A, B>>::ResultT>::type val( Duo<A, B>& d )
 {
 	return DuoValue<N, Duo<A, B>>::get( d );
 }
 
 template <int N, typename A, typename B>
-inline const typename std::reference_wrapper<typename DuoT<N, Duo<A, B>>::ResultT>::type& val( const Duo<A, B>& d )
+inline typename add_const_lvalue_reference<typename DuoT<N, Duo<A, B>>::ResultT>::type val( const Duo<A, B>& d )
 {
 	return DuoValue<N, Duo<A, B>>::get( d );
 }
