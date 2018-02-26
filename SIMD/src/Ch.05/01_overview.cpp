@@ -2,7 +2,7 @@
 MMX 에서는 64bit 정수형 package 연산만 가능하였으나 SSE에서는 128bit package에 32bit float 실수 자료형에 대한 병렬 연산이 가능하다.
 
 __m128 : 32bit float 형 실수 데이터 4개를 담을 수 있는 128bit 데이터형을 의미한다.
-xmmintrin.h 파일 안에 __m128 데이터형은 다음과 같이 정의되어 있다.
+emmintrin.h 파일 안에 __m128 데이터형은 다음과 같이 정의되어 있다.
 
 typedef union __declspec(intrin_type) __declspec(align(16)) __m128 {
 float               m128_f32[4];
