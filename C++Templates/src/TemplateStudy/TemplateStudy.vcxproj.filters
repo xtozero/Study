@@ -133,6 +133,9 @@
     <Filter Include="23_Typelist">
       <UniqueIdentifier>{042fbd1f-3edc-4948-8239-0d7f2b580100}</UniqueIdentifier>
     </Filter>
+    <Filter Include="24_Tuple%28C++11%29">
+      <UniqueIdentifier>{00ee25c3-b867-4a44-981a-e0ad3bbba7b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="02_Overload Resolution\Summary.cpp">
@@ -867,6 +870,24 @@
     <ClCompile Include="23_Typelist\03_TL.cpp">
       <Filter>23_Typelist</Filter>
     </ClCompile>
+    <ClCompile Include="24_Tuple\01_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
+    <ClCompile Include="24_Tuple\02_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
+    <ClCompile Include="24_Tuple\03_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
+    <ClCompile Include="24_Tuple\04_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
+    <ClCompile Include="24_Tuple\05_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
+    <ClCompile Include="24_Tuple\06_T.cpp">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03_One Definition Rule\OnePerProgram\ODR_10.h">
@@ -970,6 +991,33 @@
     </ClInclude>
     <ClInclude Include="23_Typelist\cons.h">
       <Filter>23_Typelist</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\Tuple.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleTypelist.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleAlgorithm.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\copycounter.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\indexList.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleOptimize.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleOptimize2.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleOptimize3.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
+    </ClInclude>
+    <ClInclude Include="24_Tuple\TupleOptimizeFinal.h">
+      <Filter>24_Tuple%28C++11%29</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
